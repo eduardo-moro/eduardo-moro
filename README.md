@@ -9,14 +9,12 @@ I'm currently working with <strong> PHP, JavaScript, mySQL, ans NODE.js </strong
 </p>
 
 <style> 
-
-	.column
-	{
-	    min-width:  400px !important;
-	}
-	.column-text
-	{
-		min-width: 600px !important;
-	}
-
+.column
+{
+  min-width:  400px !important;
+}
+.column-text
+{
+  min-width: 600px !important;
+}
 </style>
