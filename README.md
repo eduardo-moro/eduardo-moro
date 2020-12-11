@@ -6,7 +6,7 @@
 
 ## Hi there, I'm Eduardo, a <strong>"backend" developer</strong>,
 
-I'm currently working with <strong> PHP, JavaScript, mySQL,ajax, Bootstrap, Yii and VUE.js </strong><br> I'm currently learning <strong> lumen, python and react native </strong> <br>My main skills: <strong> PHP, VUE.js, SQL </strong> and it's stuff (pg, my, lite, maria) <strong>
+I'm currently working with <strong> PHP, JavaScript, mySQL, ajax, Bootstrap, Yii(PHP) and VUE.js </strong><br> I'm currently learning <strong> lumen, python and react native </strong> <br>My main skills: <strong> PHP, VUE.js, SQL </strong> and it's stuff (pg, my, lite, maria) <strong>
 	
 I'm a <strong>UFPR system developer</strong> student, currently on course's 2nd year.
 
