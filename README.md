@@ -10,7 +10,7 @@ I'm currently working with <strong> PHP, JavaScript, mySQL,ajax, Bootstrap, Yii 
 	
 I'm a <strong>UFPR system developer</strong> student, currently on course's 2nd year.
 
-I have the desire of migrating from only fullstack PHP programmning (with use of bootstrap and another frontend frameworks of course), to also be a react-native frontend developer, i heve some VUE.js skills, that I'm using as a knowlegement base for my react-native personal projects.
+I have the desire of migrating from only fullstack PHP programmning (with use of bootstrap and another frontend frameworks of course), to also be a react-native frontend developer, i have some VUE.js skills, that I'm using as a knowlegement base for my react-native personal projects.
 
 I use phpstorm, sublime text, postman, android studio, vim, nvim, nano, and anything else. (anything except vscode hahaha)
 </p>
