@@ -1,8 +1,8 @@
 <img style="min-width:  400px !important;" src="https://www.capthronetechnologies.com/assets/images/web-application-development.png" min-width="400px" max-width="400px" width="400px" align="right">
 <p align="right"> <img src="https://komarev.com/ghpvc/?username=eduardo-moro&label=Profile%20views&color=00ffff&style=flat" alt="eduardo-moro" /> </p>
 
-
-<h2 align="center" Hi there, I'm Eduardo, a <strong>"backend" developer</strong>,</h2>
+<br>
+<h2 align="center"> Hi there, I'm Eduardo, a <strong>"backend" developer</strong>,</h2>
 
 
 <div align="left" class="column-text">
