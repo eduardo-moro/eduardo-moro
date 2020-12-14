@@ -1,5 +1,5 @@
 <img style="min-width:  400px !important;" src="https://www.capthronetechnologies.com/assets/images/web-application-development.png" min-width="400px" max-width="400px" width="400px" align="right">
-
+<p align="right"> <img src="https://komarev.com/ghpvc/?username=eduardo-moro&label=Profile%20views&color=00ffff&style=flat" alt="eduardo-moro" /> </p>
 <div align="left" class="column-text">
 	
 <p style="min-width: 800px !important;"> 
@@ -14,3 +14,5 @@ I have the desire of migrating from only fullstack PHP programmning (with use of
 
 I use phpstorm, sublime text, postman, android studio, vim, nvim, nano, and anything else. (anything except vscode hahaha)
 </p>
+
+<p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=eduardo-moro&show_icons=true&theme=dark&hide_border=true&locale=en&layout=compact" alt="eduardo-moro" /></p>
