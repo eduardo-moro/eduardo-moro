@@ -1,10 +1,13 @@
 <img style="min-width:  400px !important;" src="https://www.capthronetechnologies.com/assets/images/web-application-development.png" min-width="400px" max-width="400px" width="400px" align="right">
 <p align="right"> <img src="https://komarev.com/ghpvc/?username=eduardo-moro&label=Profile%20views&color=00ffff&style=flat" alt="eduardo-moro" /> </p>
+
+
+<h2 align="center" Hi there, I'm Eduardo, a <strong>"backend" developer</strong>,</h2>
+
+
 <div align="left" class="column-text">
 	
 <p style="min-width: 800px !important;"> 
-
-## Hi there, I'm Eduardo, a <strong>"backend" developer</strong>,
 
 I'm currently working with <strong> PHP, JavaScript, mySQL, ajax, Bootstrap, Yii(PHP) and VUE.js </strong><br> I'm currently learning <strong> lumen, python and react native </strong> <br>My main skills: <strong> PHP, VUE.js, SQL </strong> and it's stuff (pg, my, lite, maria) <strong>
 	
