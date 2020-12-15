@@ -14,7 +14,7 @@ I'm a <strong>UFPR - system's development and analysis</strong> student, current
 
 I have the desire of migrating from only fullstack PHP programmning (with use of bootstrap and another frontend frameworks of course), to also be a react-native frontend developer, i have some VUE.js skills, that I'm using as a knowlegement base for my react-native personal projects.
 
-I use phpstorm, sublime text, postman, android studio, vim, nvim, nano, and anything else. (anything except vscode hahaha)
+I use phpstorm, sublime text, postman, android studio, vim, nvim, nano, and anything else. 
 </p>
 
 <p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=eduardo-moro&show_icons=true&theme=dark&hide_border=true&locale=en&layout=compact" alt="eduardo-moro" /></p>
