@@ -1,7 +1,7 @@
 <img style="min-width:  400px !important;" src="https://www.capthronetechnologies.com/assets/images/web-application-development.png" min-width="400px" max-width="400px" width="400px" align="right">
 
 <br>
-<h2 align="center"> Hi there, I'm Eduardo, a <strong>"backend" developer</strong>,</h2>
+<h2 align="center"> Hi there, I'm Eduardo, a <strong>fulltack developer</strong>,</h2>
 
 
 <div align="left" class="column-text">
