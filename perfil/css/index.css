@@ -1,0 +1,50 @@
+body
+{
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: 500;
+}
+
+@keyframes expand {
+  from {
+      width: 0;
+      margin-left: 50%;
+  }
+  to {
+      width: 100%;
+      margin-left: 0;
+  }
+}
+
+hr{
+    width: 100%;
+}
+
+.grow
+{
+    width: 0;
+    animation: expand 2s ease-out forwards;
+    border-bottom: 1px solid black;
+}
+
+.span
+{
+    width: 100%;
+}
+
+.image__profile
+{
+    position: relative;
+    top: 8vh;
+}
+
+.tech_image
+{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+}
+
+.row
+{
+    margin: 0;
+}
