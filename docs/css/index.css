@@ -31,6 +31,14 @@ hr{
     width: 100%;
 }
 
+.bg-profile{
+    background-image: url("../assets/images/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: 0 -300px;
+    background-size: cover;
+    height: 100%;
+}
+
 .image__profile
 {
     position: relative;
@@ -42,9 +50,45 @@ hr{
     width: 120px;
     height: 120px;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .row
 {
     margin: 0;
+}
+
+.navbar{
+    font-weight: 600;
+}
+
+.nav-item{
+    text-shadow: 1px 1px 5px black !important;
+    color: #fffc !important;
+}
+
+.nav-item:hover{
+    color: #ffff !important;
+    text-shadow: 1px 1px 5px black;
+}
+
+#qualidades-container > div > img:hover {
+    filter: drop-shadow(1px 1px 2px #333);
+}
+
+.bg-gradient{
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 14%, rgba(0,228,255,0) 100%);
+}
+
+@media screen and (max-width: 767px) {
+    .bg-profile {
+        background-position: center;
+    }
+    .bg-gradient{
+        background: var(--dark);
+    }
+    .nav-item{
+        text-shadow: none !important;
+        color: #fffc !important;
+    }
 }

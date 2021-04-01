@@ -14,7 +14,7 @@
     <body>
 
         <!-- navbar -->
-        <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-sm fixed-top navbar-dark bg-gradient">
             <a class="navbar-brand" href="index.html">
                 Eduardo Moro
             </a>
@@ -26,6 +26,7 @@
                     <a class="nav-item nav-link active" href="#inicio">Inicio</a>
                     <a class="nav-item nav-link" href="#qualidades">Qualificações</a>
                     <a class="nav-item nav-link" href="#sobre">Sobre</a>
+                    <a class="nav-item nav-link" href="#contato">Contato</a>
                     <a class="nav-item nav-link" target="_blank" href="https://www.linkedin.com/in/eduardo-moro-790520183/">LinkedIn</a>
                     <a class="nav-item nav-link" target="_blank" href="https://github.com/eduardo-moro">GitHub</a>
                 </div>
@@ -33,56 +34,96 @@
         </nav>
         <!-- end navbar -->
 
-        <div style="height: 54px;"></div>
+        <div class="container-fluid" style="padding: 0; min-height: 100vh">
+<!--            <div style="height: 54px;"></div>-->
+            <!-- profile -->
+            <div class="container-fluid bg-transparent bg-profile">
+                <div class="row justify-content-around">
+                    <img src="assets/images/eduardo_moro.jpg"
+                         width="220"
+                         height="220"
+                         style="border-radius: 220px"
+                         alt="eduardo moro"
+                         class="image__profile"
+                    >
+                </div>
+            </div>
+            <div style="height:84px;"></div>
+            <div class="container">
+                <h1 class="text-dark text-center" style="margin-bottom: 0">
+                    Eduardo Moro
+                </h1>
+                <hr style="margin: 3px 0" class="grow">
+                <h4 class="text-dark text-center" style="margin-left: .3em">
+                    desenvolvedor full-stack.
+                </h4>
+            </div>
+            <!-- end profile -->
 
-        <!-- profile -->
-        <div class="container-fluid bg-dark">
-            <div class="row justify-content-around">
-                <img src="assets/images/eduardo_moro.jpg"
-                     width="220"
-                     height="220"
-                     style="border-radius: 220px"
-                     alt="eduardo moro"
-                     class="image__profile"
-                >
+            <div style="height:64px;"></div>
+
+            <!-- qualities -->
+            <div class="container-fluid justify-content-center" id="qualidades-container" style="padding: 24px 0">
+                <div class="row justify-content-center" id="qualidades">
+                    <img class="tech_image" src="assets/images/technologies/PHP.svg" alt="" style="padding: 20px 10px;">
+                    <img class="tech_image" src="assets/images/technologies/NODE.svg" alt="" style="padding: 20px 10px; text-shadow: 0 0 3px white">
+                    <img class="tech_image" src="assets/images/technologies/RN.svg" alt="" style="padding: 10px;">
+                </div>
+                <div class="row justify-content-center">
+                    <img class="tech_image" src="assets/images/technologies/BOOTSTRAP.svg" alt="" style="padding: 14px">
+                    <img class="tech_image" src="assets/images/technologies/VUE.svg" alt="" style="padding: 12px">
+                    <img class="tech_image" src="assets/images/technologies/PYTHON.svg" alt="" style="padding: 28px;">
+                </div>
+                <div class="row justify-content-center">
+                    <img class="tech_image" src="assets/images/technologies/MYSQL.png" alt="" style="padding: 26px 25px;">
+                    <img class="tech_image" src="assets/images/technologies/PGSQL.svg" alt="" style="padding: 12px;">
+                    <img class="tech_image" src="assets/images/technologies/LINUX.svg" alt="" style="padding: 12px;">
+                </div>
+            </div>
+            <!-- end qualities -->
+
+        </div>
+
+        <div class="container-fluid" style="padding: 0">
+            <div class="container-fluid bg-dark" id="sobre">
+                <div class="container text-light">
+                    <br>
+                    <br>
+                    <h2 class="text-center"> Sobre </h2>
+                    <hr class="border-light">
+                    <h4>Prólogo</h4>
+                    <p>
+                        Após a produção de um
+                        <a title="O projeto foi uma bobina de tesla que toca musicas">projeto</a>
+                        utilizando arduino e linguagem C no colégio,
+                        vi o desafio que era programar, e o quanto aquilo havia
+                        me animado, não consegui parar de estudar até entender
+                        o que estava acontecendo, e como faria para meu projeto
+                        funcionar. Esta experiência foi o estopim para tudo que viria,
+                        decidi me inscrever no curso de Análise e desenvolvimento
+                        de sistemas, na Universidade Federal do Paraná, e sou programador
+                        desde 2019.
+                    </p>
+                    <br>
+                    <h4>"A jornada do herói"</h4>
+                    <p>
+                        Não há nada que me prenda mais à uma história, seja de livros,
+                        ou de jogos, do que a "jornada do herói", a idéia de que você
+                        acompanha um personagem o qual não é simplesmente excepcional
+                        só por ser, ele é excepcional por ter uma essência, durante
+                        a sua história, vemos o crescimento do personagem, e todos os
+                        desafios que ele encontra e apesar deles, vemos seu triunfo.
+                    </p>
+                    <p>
+                        O que sinto quando domino um novo conceito, é que estou crescendo,
+                        me tornando cada vez melhor, e é isto que me motiva a ser um
+                        programador, resolvendo um desafio atrás do outro.
+                    </p>
+                    <br>
+                    <br>
+                </div>
             </div>
         </div>
-
-        <div style="height:84px;"></div>
-
-        <div class="container">
-            <h1 class="text-dark text-center" style="margin-bottom: 0">
-                Eduardo Moro
-            </h1>
-            <hr style="margin: 3px 0" class="grow">
-            <h4 class="text-dark text-center" style="margin-left: .3em">
-                desenvolvedor full-stack.
-            </h4>
-        </div>
-        <!-- end profile -->
-
-        <div style="height:64px;"></div>
-
-        <!-- qualities -->
-        <div class="container justify-content-center bg-light" style="padding: 24px 0">
-            <div class="row justify-content-center">
-                <img class="tech_image" src="assets/images/technologies/PHP.svg" alt="" style="padding: 20px 10px;">
-                <img class="tech_image" src="assets/images/technologies/NODE.svg" alt="" style="padding: 20px 10px;">
-                <img class="tech_image" src="assets/images/technologies/PYTHON.svg" alt="" style="padding: 28px;">
-                <img class="tech_image" src="assets/images/technologies/LINUX.svg" alt="" style="padding: 12px;">
-                <img class="tech_image" src="assets/images/technologies/PGSQL.svg" alt="" style="padding: 12px;">
-                <img class="tech_image" src="assets/images/technologies/MYSQL.png" alt="" style="padding: 26px 25px; filter: brightness(0);">
-                <hr>
-                <img class="tech_image" src="assets/images/technologies/RN.svg" alt="" style="padding: 10px;">
-                <img class="tech_image" src="assets/images/technologies/VUE.svg" alt="" style="padding: 12px">
-                <img class="tech_image" src="assets/images/technologies/BOOTSTRAP.svg" alt="" style="padding: 14px">
-            </div>
-
-
-
-        </div>
-
-        <!-- end qualities -->
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
