@@ -12,6 +12,7 @@ I'm currently working with <strong> PHP, JavaScript and mySQL </strong><br> I'm 
 	
 I'm a <strong>UFPR - system's development and analysis</strong> student, currently on course's 2nd year.
 
+<a href="https://eduardo-moro.github.io/eduardo-moro/#inicio">My github page</a>
 
 <p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=eduardo-moro&show_icons=true&theme=dark&hide_border=true&locale=en&layout=compact" alt="eduardo-moro" /></p>
 <br>
