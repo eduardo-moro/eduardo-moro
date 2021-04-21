@@ -1,18 +1,10 @@
-<img style="min-width:  400px !important;" src="https://www.capthronetechnologies.com/assets/images/web-application-development.png" min-width="400px" max-width="400px" width="400px" align="right">
+<div style="display: flex; align-content: center">
+    <h1>Olá 👋, meu nome é Eduardo</h1>
+</div>
 
-<br>
-<h2 align="center"> Hi there, I'm Eduardo, a <strong>fulltack developer</strong>,</h2>
-
-
-<div align="left" class="column-text">
-	
-<p style="min-width: 800px !important;"> 
-
-I'm currently working with <strong> PHP, JavaScript and mySQL </strong><br> I'm currently learning <strong> lumen, python and react native </strong> <br>My main skills: <strong> PHP, VUE.js, SQL </strong> and it's stuff (pg, my, lite, maria) <strong>
-	
-I'm a <strong>UFPR - system's development and analysis</strong> student, currently on course's 2nd year.
-
-<a href="https://eduardo-moro.github.io/eduardo-moro/#inicio">My github page</a>
-
-<p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=eduardo-moro&show_icons=true&theme=dark&hide_border=true&locale=en&layout=compact" alt="eduardo-moro" /></p>
-<br>
+<img src="https://img.shields.io/badge/WHATSAPP-%2325D366.svg?&style=for-the-badge&logo=whatsapp&logoColor=white" />
+<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />
+<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" />
+  
+<a href="#"><img src="https://github-readme-stats.vercel.app/api/wakatime?username=eduardomoro&show_icons=true&theme=vue-dark"></a>
+<a href="#"><img src="https://github-readme-stats.vercel.app/api/top-langs?username=eduardo-moro&show_icons=true&theme=vue-dark&langs_count=18&layout=compact&count_private=true&show_icons=true"></a>
