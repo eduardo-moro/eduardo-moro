@@ -1,6 +1,6 @@
 <div align="center">
     <h1>Olá 👋, meu nome é Eduardo</h1>
-    <a target="_blank" href="https://api.whatsapp.com/send?phone=5541991855670&text=Ol%C3%A1%20Eduardo%2C%20vim%20pelo%20seu%20github"><img src="https://img.shields.io/badge/WHATSAPP-%2325D366.svg?&style=for-the-badge&logo=whatsapp&logoColor=white"/></a> <a target="_blank" href="https://www.linkedin.com/in/eduardo-moro-790520183/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /> </a> <a target="_blank" href="https://t.me/moroeduardo"> <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" /></a> <a href="mailto:eduardomoro1127@gmail.com"> <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a>
+    <a target="_blank" href="https://api.whatsapp.com/send?phone=5541991855670&text=Ol%C3%A1%20Eduardo%2C%20vim%20pelo%20seu%20github"><img src="https://img.shields.io/badge/WHATSAPP-%2325D366.svg?&style=for-the-badge&logo=whatsapp&logoColor=white"/></a> <a target="_blank" href="https://www.linkedin.com/in/eduardo-moro-790520183/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /> </a> <a target="_blank" href="https://t.me/moroeduardo"> <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" /></a> <a href="mailto:eduardomoro1127@gmail.com"> <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a> <a href="https://eduardo-moro.github.io/eduardo-moro/"> <img src="https://img.shields.io/badge/page-4489fc?style=for-the-badge&logo=linux&logoColor=white"></a>
     <h4>
         Desenvolvedor fullstack
     </h4>
@@ -11,11 +11,14 @@
     <p> Sou apaixonado por tecnologia, não há bug que não possa ser resolvido com uma boa caneca de café e uma meia hora de estudos.</p>
     <hr>
     Atualmente, este é o numero de visitantes do meu github:
+    <br>
 
 ![visitantes](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Feduardo-moro%2Fhit-counter&count_bg=%2379C83D&title_bg=%23555555&icon=whatsapp&icon_color=%23E7E7E7&title=%00&edge_flat=true)
 
 <hr>
-    Minhas linguagens e tecnologias:
+
+### Minhas linguagens e tecnologias:
+<br>
 
 ![](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
@@ -51,6 +54,7 @@
 
 <details>
     <summary>Um "pouco" sobre minha carreira:</summary>
+    <br>
     <p>Iniciei na área da programação em 2019, quando passei no curso de ADS, já hávia tentado a sorte em desenvolvimento de jogos, com java e C#, e feito um projeto de ensino médio utilizando arduino para alimentar uma bobina de tesla que tocava musicas, mas nada que chegasse perto do mundo que se abriu em minha frente naquele ano, e que ano louco foi aquele.</p>
     <p>Comecei aprendendo o Pascal, sempre ouço reclamação de quem estava comigo na sala, aprendendo uma linguagem "tão defasada", muitos até hoje se queixam que queriam ter aprendido python, js, ou alguma outra linguagem que seja mais atual, nunca vou entender essa sensação, Pascal foi por quase 20 anos uma das linguagens mais utilizadas no mundo, ele funciona, faz o que se espera que faça, e já foi util pra caramba para muita gente, e desde esse ponto, para mim, o que me importa não é a linguagem, mas sim os problemas que ela pode me trazer, se eu não souber uma linguagem, e ela tiver uma lógica diferente de tudo aquilo que conheço, meu impeto é estudar, até que a domine.</p>
     <p>Meu primeiro estágio foi simples, foi rápido, foi uma introdução aceitável, trabalhei como ajudante de web design, trabalhando com uma framework baseada em laravel, a october, não havia muito código, não haviam grandes dificuldades, o que era incrivel para alguém que só sabia pascal, html e um pouco de CSS, saí dali um mês depois por falta de demandas do escritório, sabendo LESS e um pouco do PHP.</p>
@@ -65,3 +69,4 @@
 
 [![wakatime](https://github-readme-stats.vercel.app/api/wakatime?username=eduardomoro&border_radius=0&cache_seconds=1800&hide_border=true&bg_color=0000&theme=vue-dark)](https://wakatime.com/@eduardomoro)
 </div>
+
