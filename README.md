@@ -63,5 +63,5 @@
 
 <div style="background: rgb(47,34,255);background: linear-gradient(41deg, rgba(47,34,255,1) 0%, rgba(220,44,237,1) 77%, rgba(255,0,178,1) 100%); border-radius: 8px">
 
-![wakatime](https://github-readme-stats.vercel.app/api/wakatime?username=eduardomoro&border_radius=0&cache_seconds=1800&hide_border=true&bg_color=0000&theme=vue-dark)
+[![wakatime](https://github-readme-stats.vercel.app/api/wakatime?username=eduardomoro&border_radius=0&cache_seconds=1800&hide_border=true&bg_color=0000&theme=vue-dark)](https://wakatime.com/@eduardomoro)
 </div>
