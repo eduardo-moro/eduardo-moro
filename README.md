@@ -6,7 +6,6 @@
     </h4>
     <p> Desenvolvo desde 2019, trabalho com o que amo. </p>
     <p> Para mim não importa a linguagem, importa o resultado desejado, tecnologias são ferramentas e devemos aprender a lidar com elas e dominá-las da melhor forma possivel.</p>
-    <p> Atualmente sou orgulhosamente desenvolvedor fullstack na <a href="https://www.quadritech.com.br" target="_blank">Quadritech</a>, e tento ser útil dentro do mundo da programação onde eu for nescessário.</p> 
     <p> Sou estudante do curso de análise e desenvolvimento de sistemas na UFPR - Universidade Federal do Paraná </p>
     <p> Sou apaixonado por tecnologia, não há bug que não possa ser resolvido com uma boa caneca de café e uma meia hora de estudos.</p>
     <hr>
