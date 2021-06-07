@@ -72,9 +72,3 @@
 
 <hr>
 
-<div align="center">
-
-[<img src="https://github-readme-stats.vercel.app/api/wakatime?username=eduardomoro&cache_seconds=1800&hide_border=true&bg_color=0000&theme=prussian" alt >](https://wakatime.com/@eduardomoro)
-
-</div>
-
