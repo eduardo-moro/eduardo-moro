@@ -12,7 +12,7 @@
     Atualmente, este é o numero de visitantes do meu github:
     <br>
 
-![](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=github.com/eduardo-moro/hit-counter&count_bg=#79C83D&title=%00&edge_flat=true)
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=github.com/eduardo-moro/hit-counter&count_bg=%2379C83D&title_bg=%23555555&icon_color=%23E7E7E7&title=Views&edge_flat=true)](https://hits.seeyoufarm.com)
     
     
 <hr>
