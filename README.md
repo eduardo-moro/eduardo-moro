@@ -12,7 +12,7 @@
 
 
 <h5> 
-I am a backend developer, passionate about technology, and bad at League of legends
+I am a fullstack developer, passionate about pedagogy, developer by accident, developing a platform that will change education.
 
 </h5>
 
@@ -105,46 +105,6 @@ I am a backend developer, passionate about technology, and bad at League of lege
 ![.Net](https://img.shields.io/badge/Tests-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
 
 
-### Dear recruiter, let's talk a bit about my career:
-
-I started in the programming area in 2019 when I was accepted by UFPR, I had already tried my luck in game development, 
-with Java and C#, and made a high school project using Arduino to feed a tesla coil that plays music, but nothing of 
-that came close to the world that opened up in front of me that year, and what a crazy year was that.
-
-I started by learning Pascal, I always heard complaints from my class colleagues because we were learning a language 
-"so outdated", many complain to this day that they wish they had learned Python, js, or some other newer language, 
-I will never understand this feeling, Pascal has been for almost 20 years one of the most used languages in the world, 
-it works, it does what it is expected to do, and it has been very useful for a lot of people, and from that point on, 
-what matters to me is not language, but the problems it can solve, if I don't know a language, and it has a logic 
-different from everything I know, my impetus is to study, until I master it.
-
-I had a little help to get my first internship, an indication, the system was big, and made in a framework I never heard
-before YII, which is already old, but does what it needs, is up to date and relatively safe, it was not easy to learn 
-at first, I didn't know much about PHP yet, but I learned, after 6 months I was able to deliver most of my tasks, and
-I had learned to ask for help.
-
-I joined my second company in 2020, after Brazil allow a home office for interns, after a week I was hired as a junior, in
-that company I learned VUE, and lumen, improved my knowledge with git and learned infinite new things, including computer
-vision, I made some facial and hand tracking with Python, and this is what makes me passionate about technology, 
-learning, improving all the time, and being able to help someone with my work.
-
-I started doing freelance work in 2021, so I left my job, to keep myself completely at home, and seek new challenges,
-I worked at Ecritel do Brasil, working with modern frontend technologies such as Vue3 and nuxt, working with the creation 
-of pixel-perfect interfaces, until I received my first proposal to work for a company overseas.
-
-I worked for 7 months in Mavtek, Learned a lot with my senior colleagues. In Mavtek I was part of the team that keeps 
-the legacy running, we made updates and integrated the legacy systems into the new ones, the experience of only speaking 
-English the whole day and learning a whole new work culture was awesome and surely I will keep this experience for the
-rest of my life.
-
-I got back to Quadritech, working on innovation projects mainly using c#, dotnet, python and c++, creating a windows 
-program that reads fingerprints, signatures, and pictures of people and searches this data to recognize people, this program
-is going to be used by Brazilian federal organs, also I made research on RISC-V-based boards such as k210 and esp32
-for embedded code projects, creating micro AI and LVGL 7 interfaces.
-
-I am currently working on Houseasy as a senior backend developer, I maintain the main product, working mainly with .net, golang, and node.js, implementing MQTT communication, and taking care of data analysis demands.
-
-<br>
 
 
 <div align="right">
