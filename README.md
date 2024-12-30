@@ -73,30 +73,16 @@ I am a fullstack developer, passionate about pedagogy, ciclist.
 
 <h5>Feel free to reach me out directly: <br></h5>
 
-<a target="_blank" href="https://api.whatsapp.com/send?phone=5541991855670&text=Hey%20Eduardo">
+<a target="_blank" href="https://api.whatsapp.com/send?phone=5541988721768&text=Hey%20Eduardo">
     <img src="https://img.shields.io/badge/WHATSAPP-%2325D366.svg?&style=for-the-badge&logo=whatsapp&logoColor=white"/>
-</a> 
-
-<a target="_blank" href="https://t.me/moroeduardo"> 
-    <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" />
 </a> 
 
 <a target="_blank" href="https://www.linkedin.com/in/eduardomoro/">
     <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
 </a>
 
-<br>
-
 <a href="mailto:eduardomoro1127@gmail.com"> 
     <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white">
 </a>
-
-<a target="_blank" href=https://www.instagram.com/duh_moro/> 
-    <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?style=for-the-badge&logo=Instagram&logoColor=white">
-</a> 
-
-<a href="https://my.indeed.com/p/eduardohenriquep-hiffif5"> 
-    <img src="https://img.shields.io/badge/indeed-2e6cf0?style=for-the-badge&logo=indeed&logoColor=white">
-</a> 
 
 </div>
