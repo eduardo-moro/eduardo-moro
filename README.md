@@ -31,7 +31,7 @@ I am a fullstack developer, passionate about pedagogy, ciclist.
 
 #### Windows:
 
-![C++](https://img.shields.io/badge/c%2b%2b-%23239120.svg?style=for-the-badge&logo=c-plus-plus&logoColor=white)
+![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 ![.Net](https://img.shields.io/badge/.NET-5C2D91?style=for-the-badge&logo=.net&logoColor=white)
 
 #### Database:
