@@ -10,18 +10,11 @@
         Desenvolvedor fullstack
     </h4>
     <p> Desenvolvo desde 2019. </p>
-    <p> Para mim não importa a linguagem, importa o resultado desejado, tecnologias são ferramentas e devemos aprender a lidar com elas e dominá-las da melhor forma possivel.</p>
     <p> Sou ex estudante do curso de análise e desenvolvimento de sistemas na UFPR - Universidade Federal do Paraná </p>
     <p> Estou estudando para entrar no curso de Ciência da Computação </p>
     <p> Sou apaixonado por tecnologia, não há bug que não possa ser resolvido com uma boa caneca de café e uma meia hora de estudos.</p>
     <hr>
-    Atualmente, este é o numero de visitantes do meu github:
-    <br>
 
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=github.com/eduardo-moro/hit-counter&count_bg=%2379C83D&title_bg=%23555555&icon_color=%23E7E7E7&title=Views&edge_flat=true)](https://hits.seeyoufarm.com)
-    
-    
-<hr>
 
 ### Minhas linguagens e tecnologias:
 <br>
