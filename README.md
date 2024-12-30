@@ -81,7 +81,7 @@ I am a fullstack developer, passionate about pedagogy, ciclist.
     <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
 </a>
 
-<a href="mailto:eduardomoro1127@gmail.com"> 
+<a href="mailto:dev.eduardomoro@gmail.com"> 
     <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white">
 </a>
 
