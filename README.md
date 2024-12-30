@@ -26,7 +26,7 @@ I am a fullstack developer, passionate about pedagogy, ciclist.
 ![Go](https://img.shields.io/badge/Go-00ADD8?style=for-the-badge&logo=go&logoColor=white)<br>
 
 #### Embedded:
-![Micropython](https://img.shields.io/badge/Micropython-14354C?style=for-the-badge&logo=python&logoColor=white)
+![Python](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)
 ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
 
 #### Windows:
