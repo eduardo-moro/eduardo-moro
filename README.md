@@ -12,7 +12,7 @@
 
 
 <h5> 
-I am a fullstack developer, passionate about pedagogy, ciclist, developing a platform that will change education.
+I am a fullstack developer, passionate about pedagogy, ciclist.
 
 </h5>
 
