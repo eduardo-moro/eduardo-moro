@@ -14,7 +14,7 @@ Shell script: Bash, Fish, Zsh, Bat <br>
 Controle de versão: Git (github, gitlab, confluence), SVN <br>
 
 
-#### Feel free to reach me out directly: <br>
+#### Sinta-se livre para me contatar diretamente: <br>
 
 <a target="_blank" href="https://api.whatsapp.com/send?phone=5541988721768&text=Hey%20Eduardo">
     <img src="https://img.shields.io/badge/WHATSAPP-%2325D366.svg?&style=for-the-badge&logo=whatsapp&logoColor=white"/>
