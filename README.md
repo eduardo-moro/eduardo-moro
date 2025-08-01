@@ -4,33 +4,9 @@
 
 
 #  Hello 👋, my name is Eduardo
-### I am a full stack developer, passionate about pedagogy and technology, cyclist.
+### I am a brazilian fullstack developer, passionate about sharing knowledge, solving real life problems and cycling.
 
-#### My knowledge:
-Backend: .Net, Typescript (node, express), Golang, PHP <br>
-Frontend: Tailwind, Bootstrap, React, Vue <br>
-Database: Mysql, PgSQL, SQLite, MsSql, MongoDB <br>
-Caching: Redis <br>
-Container orchestration: Docker, Kubernetes <br>
-Cloud: AWS, Google Cloud, Azure, Alibaba <br>
-Embedded: Python (micropython, lvgl), C++ <br>
-Windows: C++, .Net <br>
-Scripting: Bash, Fish, Zsh, Bat <br>
-Version control: Git (github, gitlab, confluence), SVN <br>
+I do have a lot of experience with multiple diferent tecnologies, but right now I'm looking after improving my low level skills, focusing on Go programming language and C++.
+Check my projects, try running them, create some requests, it will be great to hear some tips on how to improve how I show my skills in this space of the internet!
 
-
-#### Feel free to reach me out directly: <br>
-
-<a target="_blank" href="https://api.whatsapp.com/send?phone=5541988721768&text=Hey%20Eduardo">
-    <img src="https://img.shields.io/badge/WHATSAPP-%2325D366.svg?&style=for-the-badge&logo=whatsapp&logoColor=white"/>
-</a> 
-
-<a target="_blank" href="https://www.linkedin.com/in/eduardomoro/">
-    <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
-</a>
-
-<a href="mailto:dev.eduardomoro@gmail.com"> 
-    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white">
-</a>
-
-</div>
+#### Feel free to reach me out directly via [Linkedin](mailto:dev.eduardomoro@gmail.com) or [email](mailto:dev.eduardomoro@gmail.com)
