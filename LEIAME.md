@@ -1,31 +1,12 @@
-# Olá, meu nome é Eduardo
-### Sou desenvolvedor full stack, apaixonado por pedagogia e tecnologia, e ciclista.
+# Olá 👋, meu nome é Eduardo
+### Sou um desenvolvedor fullstack brasileiro, apaixonado por compartilhar conhecimento, resolver problemas da vida real e pedalar.
 
-#### Minhas Tecnologias:
-Backend: .Net, Typescript (node, express), Golang, PHP <br>
-Frontend: Tailwind, Bootstrap, React, Vue <br>
-Banco de dados: Mysql, PgSQL, SQLite, MsSql, MongoDB <br>
-Cache: Redis <br>
-Orquestração de containers: Docker, Kubernetes <br>
-Infraestrutura: AWS, Google Cloud, Azure, Alibaba <br>
-Embarcado: Python (micropython, lvgl), C++ <br>
-Desktop: C++, .Net <br>
-Shell script: Bash, Fish, Zsh, Bat <br>
-Controle de versão: Git (github, gitlab, confluence), SVN <br>
+Tenho bastante experiência com diversas tecnologias, mas no momento estou focado em aprimorar minhas habilidades de baixo nível, com foco na linguagem Go e em C++.
+Confira meus projetos, experimente executá-los, crie algumas issues ou pull requests — será ótimo receber sugestões de como posso melhorar a forma como apresento minhas habilidades nesse cantinho da internet!
 
 
-#### Sinta-se livre para me contatar diretamente: <br>
+Fique à vontade para entrar em contato diretamente pelo [LinkedIn](https://www.linkedin.com/in/eduardomoro/) ou por [e-mail](mailto:dev.eduardomoro@gmail.com).
 
-<a target="_blank" href="https://api.whatsapp.com/send?phone=5541988721768&text=Hey%20Eduardo">
-    <img src="https://img.shields.io/badge/WHATSAPP-%2325D366.svg?&style=for-the-badge&logo=whatsapp&logoColor=white"/>
-</a> 
 
-<a target="_blank" href="https://www.linkedin.com/in/eduardomoro/">
-    <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/>
-</a>
-
-<a href="mailto:dev.eduardomoro@gmail.com"> 
-    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white">
-</a>
-
-</div>
+Se quiser uma apresentação mais formal, casual ou técnica, podemos marcar uma entrevista! 
+_achou que era o gpt né :)
