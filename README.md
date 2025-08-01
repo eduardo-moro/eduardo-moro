@@ -10,3 +10,6 @@ I do have a lot of experience with multiple diferent tecnologies, but right now 
 Check my projects, try running them, create some requests, it will be great to hear some tips on how to improve how I show my skills in this space of the internet!
 
 #### Feel free to reach me out directly via [Linkedin](mailto:dev.eduardomoro@gmail.com) or [email](mailto:dev.eduardomoro@gmail.com)
+
+If you'd like a more formal, casual, or technical version, We can schedule a call!\
+_you thought that was gpt, right? :)
