@@ -8,5 +8,6 @@ Confira meus projetos, experimente executá-los, crie algumas issues ou pull req
 Fique à vontade para entrar em contato diretamente pelo [LinkedIn](https://www.linkedin.com/in/eduardomoro/) ou por [e-mail](mailto:dev.eduardomoro@gmail.com).
 
 
-Se quiser uma apresentação mais formal, casual ou técnica, podemos marcar uma entrevista! 
+Se quiser uma apresentação mais formal, casual ou técnica, podemos marcar uma entrevista!\
 _achou que era o gpt né :)
+
