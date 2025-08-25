@@ -11,5 +11,5 @@ Check my projects, try running them, create some requests, it will be great to h
 
 #### Feel free to reach me out directly via [Linkedin](mailto:dev.eduardomoro@gmail.com) or [email](mailto:dev.eduardomoro@gmail.com)
 
-If you'd like a more formal, casual, or technical version, We can schedule a call!\
-_you thought that was gpt, right? :)
+
+![](https://komarev.com/ghpvc/?username=eduardo-moro&style=pixel)
