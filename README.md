@@ -12,4 +12,4 @@ Check my projects, try running them, create some requests, it will be great to h
 #### Feel free to reach me out directly via [Linkedin](mailto:dev.eduardomoro@gmail.com) or [email](mailto:dev.eduardomoro@gmail.com)
 
 
-![](https://komarev.com/ghpvc/?username=eduardo-moro&style=for-the-badge?color=blue)
+![](https://komarev.com/ghpvc/?username=eduardo-moro&style=for-the-badge&color=blue)
