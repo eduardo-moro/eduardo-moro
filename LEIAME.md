@@ -1,13 +1,9 @@
-# Olá 👋, meu nome é Eduardo
-### Sou um desenvolvedor fullstack brasileiro, apaixonado por compartilhar conhecimento, resolver problemas da vida real e pedalar.
-
-Tenho bastante experiência com diversas tecnologias, mas no momento estou focado em aprimorar minhas habilidades de baixo nível, com foco na linguagem Go e em C++.
-Confira meus projetos, experimente executá-los, crie algumas issues ou pull requests — será ótimo receber sugestões de como posso melhorar a forma como apresento minhas habilidades nesse cantinho da internet!
-
-
-Fique à vontade para entrar em contato diretamente pelo [LinkedIn](https://www.linkedin.com/in/eduardomoro/) ou por [e-mail](mailto:dev.eduardomoro@gmail.com).
-
-
-Se quiser uma apresentação mais formal, casual ou técnica, podemos marcar uma entrevista!\
-_achou que era o gpt né :)
-
+#  Olá 👋, meu nome é Eduardo
+### Sou um desenvolvedor fullstack que ama terminais, eletrônica, educação e ciclismo.
+- 📍 Curitiba, PR (Brazil)
+- 📘 Lendo "A linguagem de programação Go" - Alan A.A. Donovan, Brian W. Kernighan
+- ✏️ Estudando Golang - Melhorando meu conhecimento da linguagem!
+- 📜 [Baixe meu curriculo aqui](https://docs.google.com/document/d/1-cjCqxfco2Fn0-HzA-686lvv7-nZua-5s3EUaU4c-8Q/edit?usp=sharing)
+- 🚲 44:16 Fixed gear
+- 🫂 Confira meus projetos, tente rodá-los, crie alguns requests, vai ser incrivel receber algumas dicas de como melhorar como eu mostro minhas habilidades por aqui!
+- ✉️ Sinta-se à vontade para entrar em contato comigo pelo [Linkedin](mailto:dev.eduardomoro@gmail.com) ou [email](mailto:dev.eduardomoro@gmail.com)
