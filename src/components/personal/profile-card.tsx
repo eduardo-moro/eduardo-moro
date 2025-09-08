@@ -21,7 +21,7 @@ export default function ProfileCard() {
   }
 
   return (
-    <Card className="flex shadow-none border-none h-min select-none mb-12 bg-transparent flex-col sm:flex-row">
+    <Card className="relative flex shadow-none border-none h-min select-none mb-12 px-4 flex-col sm:flex-row rounded-none bg-color-none bg-[radial-gradient(var(--background)_20%,transparent_100%)]">
         <a href="https://github.com/eduardo-moro" target="_blank" draggable="false" className="sm:w-20 w-full flex justify-center">
             <Avatar className="sm:h-20 sm:w-20 h-32 w-32">
                 <AvatarImage src={"https://github.com/eduardo-moro.png"} alt="eduardo moro" draggable="false"/>
@@ -30,7 +30,7 @@ export default function ProfileCard() {
         </a>
         <div className="flex flex-col justify-between">
             <span>
-                <h1 className="sm:text-left text-center">Eduardo Moro</h1>
+                <h1 className="sm:text-left text-center text-xl">Eduardo Moro</h1>
                 <h2 className="sm:text-left text-center">Desenvolvedor backend, ciclista e hobbista de IoT</h2>
             </span>
             <a
