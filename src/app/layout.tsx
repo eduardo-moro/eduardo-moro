@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
       <head>
-        <meta name="viewport" content="height=device-height, width=device-width, initial-scale=no, minimum-scale=1.0, target-densitydpi=device-dpi"/>
+        <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
       </head>
       <body
         className={`${varelaRound.variable} ${geistMono.variable} antialiased`}
