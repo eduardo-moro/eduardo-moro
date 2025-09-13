@@ -1,5 +1,3 @@
-"use client"
-
 import ProfileCard from "@/components/personal/profile-card"
 import Intro from "@/components/personal/intro"
 import { DotBackground } from "@/components/ui/dots"
@@ -16,11 +14,11 @@ export default function Index() {
         </DotBackground>
       </div>
 
-      <div className="h-screen w-full snap-center sm:max-w-[80%] max-w-[800px]  max-h-screen pb-20 pt-2 scroll-mt-[18em]">
+      <div className="h-screen w-full snap-center sm:max-w-[80%] max-w-[800px]  max-h-screen pb-20 pt-2 scroll-mt-[18em] sm:scroll-mt-[-12em]">
         <Intro />
       </div>
 
-      <div className="h-screen w-full snap-center sm:max-w-[80%] max-w-[800px]  max-h-screen">
+      <div className="h-screen w-full snap-center sm:max-w-[80%] max-w-[800px]  max-h-screen sm:snap-align-none">
         <div className=" flex flex-col gap-2 content-center">
           <div className="flex gap-2 flex-col md:flex-row">
               <Repo project={{name: "Geekmagic fake-os", description: "firmware para dispositivo alike geek magic", stars: 12}}/>
@@ -33,10 +31,13 @@ export default function Index() {
         </div>
       </div>
       
-      <div className="w-full snap-end sm:max-w-[80%] max-w-[800px] h-[100dvh]">
+      <div className="w-full snap-end sm:max-w-[80%] max-w-[800px] mt-[18dvh]">
         <Blog />
       </div>
-
+      
+      <div className="w-full snap-end sm:max-w-[80%] max-w-[800px] mt-[18dvh]">
+        <Blog />
+      </div>
     </div>
   )
 }

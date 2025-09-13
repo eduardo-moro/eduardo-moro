@@ -65,9 +65,8 @@ export default function ProfileCard({ className = "" }: ProfileCardProps) {
         
         <a
           className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-          target="_blank"
           rel="noopener noreferrer"
-          href="https://www.tabnews.com.br/eduardomoro/pitch-o-ultimo-cacareco-de-mesa-que-voce-vai-comprar-como-desenvolvedor"
+          href="#lastPost"
           aria-label="Leia a última publicação do Eduardo Moro"
         >
           <p>

@@ -1,5 +1,3 @@
-"use client" // Correct for TSX
-
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 
