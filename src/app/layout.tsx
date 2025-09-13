@@ -1,18 +1,21 @@
 import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Fira_Mono, Varela_Round } from "next/font/google";
 import Header from "@/components/shared/header"
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const geistMono = Fira_Mono({
+  variable: "--font-fira-mono",
+  weight: ["400", "500", "700"],
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const varelaRound = Varela_Round({
+  variable: "--font-varela-round",
+  weight: "400",
   subsets: ["latin"],
-});
+  preload: true,
+})
 
 export const metadata: Metadata = {
   title: "Eduardo Moro",
@@ -26,8 +29,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
+      <head>
+        <meta name="viewport" content="height=device-height, width=device-width, initial-scale=no, minimum-scale=1.0, target-densitydpi=device-dpi"/>
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${varelaRound.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider
             attribute="class"

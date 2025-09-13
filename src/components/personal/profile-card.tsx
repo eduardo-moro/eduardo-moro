@@ -32,7 +32,7 @@ export default function ProfileCard({ className = "" }: ProfileCardProps) {
 
   return (
     <div 
-    className={`flex shadow-none border-none h-min select-none px-4 py-3 flex-col sm:flex-row rounded-lg bg-[radial-gradient(ellipse_at_center,var(--background)_0%,transparent_100%)] ${className}`}
+      className={`flex shadow-none border-none h-min select-none py-3 flex-col sm:flex-row rounded-lg bg-[radial-gradient(ellipse_at_center,var(--background)_0%,transparent_100%)] font-mono ${className}`}
       role="region"
       aria-label="Perfil do usuário"
     >
@@ -44,7 +44,7 @@ export default function ProfileCard({ className = "" }: ProfileCardProps) {
         className="sm:w-20 w-full flex justify-center sm:mb-0 mb-4"
         aria-label="GitHub do Eduardo Moro"
       >
-        <Avatar className="sm:h-16 sm:w-16 h-20 w-20">
+        <Avatar className="sm:h-16 sm:w-16 h-20 w-20 mt-2">
           <AvatarImage 
             src="https://github.com/eduardo-moro.png" 
             alt="Foto de perfil do Eduardo Moro" 
@@ -55,7 +55,7 @@ export default function ProfileCard({ className = "" }: ProfileCardProps) {
         </Avatar>
       </a>
       
-      <div className="flex flex-col justify-between gap-2 sm:ml-4 sm:text-left text-center">
+      <div className="flex flex-col justify-between gap-2 sm:ml-4 sm:text-left text-center pt-0">
         <div>
           <h1 className="text-lg font-semibold">Eduardo Moro</h1>
           <h2 className="text-sm text-muted-foreground">
