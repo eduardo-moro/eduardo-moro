@@ -56,9 +56,9 @@ export default function ProfileCard({ className = "" }: ProfileCardProps) {
       
       <div className="flex flex-col justify-between gap-2 sm:ml-4 sm:text-left text-center pt-0">
         <div>
-          <h1 className="text-lg font-semibold">Eduardo Moro</h1>
+          <h1 className="text-lg font-semibold">{'Eduardo Moro'}</h1>
           <h2 className="text-sm text-muted-foreground">
-            Desenvolvedor backend, ciclista e hobbista de IoT
+            {'Desenvolvedor backend, ciclista e hobbista de IoT'}
           </h2>
         </div>
         
@@ -70,7 +70,7 @@ export default function ProfileCard({ className = "" }: ProfileCardProps) {
         >
           <p>
             {"Última publicação: "}
-            <span className="italic underline">"O último cacareco de mesa que você vai precisar como dev"</span>
+            <span className="italic underline">{'"O último cacareco de mesa que você vai precisar como dev"'}</span>
           </p>
         </a>
       </div>
