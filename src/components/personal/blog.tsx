@@ -28,7 +28,7 @@ export default function Blog({ className = "" }: BlogProps) {
     setMounted(true)
     async function fetchPublicationsAndContent() {
       try {
-        const publications = await getTabNewsPublications("eduardomoro", 1, 10, "new") // Fetch more publications
+        const publications = await getTabNewsPublications("eduardomoro", 1, 10, "new")
         setAllPublications(publications)
 
         if (publications.length > 0) {

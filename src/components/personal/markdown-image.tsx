@@ -13,7 +13,6 @@ export default function MarkdownImage({ handleImageClick, ...props }: MarkdownIm
   useEffect(() => {
     if (imgRef.current) {
       const img = imgRef.current;
-      // Use a timeout to ensure image dimensions are loaded
       const checkImageDimensions = () => {
         if (img.naturalHeight > img.naturalWidth) {
           setIsTallImage(true);

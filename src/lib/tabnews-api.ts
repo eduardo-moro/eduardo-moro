@@ -34,7 +34,6 @@ export async function getTabNewsPublications(
     }
 
     const data: TabNewsPublication[] = await response.json();
-    // Filter out comments, keeping only root posts (where parent_id is null)
     return data.filter(publication => publication.parent_id === null);
   } catch (error) {
     console.error(`Exception fetching TabNews publications for ${username}:`, error);
