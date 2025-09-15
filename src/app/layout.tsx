@@ -1,8 +1,10 @@
+"use client";
+
 import { ThemeProvider } from "@/components/theme-provider";
-import type { Metadata } from "next";
 import { Fira_Mono, Varela_Round } from "next/font/google";
-import Header from "@/components/shared/header"
+import Header from "@/components/shared/header";
 import "./globals.css";
+import { FaviconProvider, useFavicon } from "@/contexts/FaviconContext";
 
 const geistMono = Fira_Mono({
   variable: "--font-fira-mono",
@@ -15,11 +17,11 @@ const varelaRound = Varela_Round({
   weight: "400",
   subsets: ["latin"],
   preload: true,
-})
+});
 
-export const metadata: Metadata = {
-  title: "Eduardo Moro",
-  description: "Desenvolvedor backend",
+const Favicon = () => {
+  const { favicon } = useFavicon();
+  return <link rel="icon" href={favicon} />;
 };
 
 export default function RootLayout({
@@ -29,21 +31,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
-      <head>
-        <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-      </head>
-      <body
-        className={`${varelaRound.variable} ${geistMono.variable} antialiased`}
-      >
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="light"
-            enableSystem
-          >
-            <Header/>
-            {children}
-          </ThemeProvider>
-      </body>
+      <FaviconProvider>
+        <head>
+          <title>Eduardo Moro</title>
+          <meta name="description" content="Analista de software backend Golang, C#" />
+          <meta
+            name="viewport"
+            content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+          />
+          <link key={"/assets/normal.ico"} rel="preload" href={"/assets/normal.ico"} as="image" />
+          <link rel="preload" href="/assets/reading.ico" as="image" />
+          <Favicon />
+        </head>
+        <body
+          className={`${varelaRound.variable} ${geistMono.variable} antialiased`}
+        >
+            <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
+              <Header />
+              {children}
+            </ThemeProvider>
+        </body>
+      </FaviconProvider>
     </html>
   );
 }

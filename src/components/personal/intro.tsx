@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button"
 import { useEffect, useState } from "react"
 
+
 interface IntroProps {
   className?: string
 }
@@ -22,7 +23,7 @@ export default function Intro({ className = "" }: IntroProps) {
   }
 
   return (
-    <div className={`select-none font-sans opacity-75 pt-2 ${className}`}>
+    <div className={`select-none font-sans pt-2 text-slate-800 dark:text-slate-300 ${className}`}>
         <div className="flex flex-col justify-between gap-4 ">
             <span>
               <p>{'📍 Curitiba, PR (Brazil)'}</p>
