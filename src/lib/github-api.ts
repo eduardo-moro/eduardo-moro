@@ -8,7 +8,6 @@ export interface GitHubRepo {
 
 export async function getGitHubPinnedRepos(username: string): Promise<GitHubRepo[]> {
   const GITHUB_PAT = process.env.NEXT_PUBLIC_GITHUB_PAT;
-  console.log("GITHUB_PAT inside getGitHubPinnedRepos:", GITHUB_PAT ? "*****" : "undefined");
 
   if (!GITHUB_PAT) {
     console.error("GitHub Personal Access Token (GITHUB_PAT) not found in environment variables.");
@@ -43,7 +42,6 @@ export async function getGitHubPinnedRepos(username: string): Promise<GitHubRepo
       body: JSON.stringify({ query }),
     });
 
-    console.log("GitHub API response.ok:", response.ok);
     if (!response.ok) {
       const errorText = await response.text();
       console.error(`Error fetching GitHub pinned repos: ${response.status} ${response.statusText} - ${errorText}`);
@@ -51,7 +49,6 @@ export async function getGitHubPinnedRepos(username: string): Promise<GitHubRepo
     }
 
     const data = await response.json();
-    console.log("GitHub API data:", data);
     const pinnedItems = data.data.user.pinnedItems.nodes;
 
     return pinnedItems.map((item: GitHubRepo) => ({

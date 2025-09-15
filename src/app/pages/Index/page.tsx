@@ -19,7 +19,6 @@ export default function Index() {
   useEffect(() => {
     async function fetchPinnedRepos() {
       const repos = await getGitHubPinnedRepos("eduardo-moro");
-      console.log("Fetched pinned repos:", repos);
       setPinnedRepos(repos);
     }
     fetchPinnedRepos();
