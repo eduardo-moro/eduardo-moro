@@ -1,9 +1,11 @@
-"use client"
-
-import { useEffect, useState } from "react"
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardAction } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 
+const truncateDescription = (description: string | undefined, maxLength: number) => {
+  if (!description) return "";
+  if (description.length <= maxLength) return description;
+  return description.substring(0, maxLength) + "...";
+};
 
 type Project = {
   name?: string,
@@ -20,20 +22,6 @@ interface IntroProps {
 }
 
 export default function Repo({ className = "", project }: IntroProps) {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    return (
-      <Button variant="ghost" size="icon" disabled>
-        <p className="h-[1.2rem] w-[1.2rem]"> pt </p>
-      </Button>
-    )
-  }
-
   return (
     <Card className={`w-full min-h-24 h-36 ${className}`}>
       <CardHeader>
@@ -44,11 +32,13 @@ export default function Repo({ className = "", project }: IntroProps) {
           {(project?.forks??0) + " forks"}
         </CardDescription>
         <CardAction>
-          <Button variant="link">Github</Button>
+          <a href={project?.link ?? "#"} target="_blank" rel="noopener noreferrer">
+            <Button variant="link">Github</Button>
+          </a>
         </CardAction>
       </CardHeader>
-      <CardContent className="text-xs">
-        {project?.description??"Descrição do projeto bem longa pra gente ver como ficaria com uma descrição vinda do github"}
+      <CardContent className="text-xs font-sans pt-0">
+        {truncateDescription(project?.description, 100)??"Descrição do projeto"}
       </CardContent>
     </Card>
   )

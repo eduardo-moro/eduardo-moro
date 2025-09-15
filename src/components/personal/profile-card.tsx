@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { useEffect, useState } from "react"
+import { getTabNewsPublications, TabNewsPublication } from "@/lib/tabnews-api"
 
 interface ProfileCardProps {
   className?: string
@@ -10,9 +11,17 @@ interface ProfileCardProps {
 
 export default function ProfileCard({ className = "" }: ProfileCardProps) {
   const [isMounted, setIsMounted] = useState(false)
+  const [latestPublication, setLatestPublication] = useState<TabNewsPublication | null>(null)
 
   useEffect(() => {
     setIsMounted(true)
+    async function fetchLatestPublication() {
+      const publications = await getTabNewsPublications("eduardomoro", 1, 1, "new")
+      if (publications.length > 0) {
+        setLatestPublication(publications[0])
+      }
+    }
+    fetchLatestPublication()
   }, [])
 
   if (!isMounted) {
@@ -62,17 +71,19 @@ export default function ProfileCard({ className = "" }: ProfileCardProps) {
           </h2>
         </div>
         
-        <a
-          className="text-xs text-muted-foreground hover:text-foreground transition-colors"
-          rel="noopener noreferrer"
-          href="#lastPost"
-          aria-label="Leia a última publicação do Eduardo Moro"
-        >
-          <p>
-            {"Última publicação: "}
-            <span className="italic underline">{'"O último cacareco de mesa que você vai precisar como dev"'}</span>
-          </p>
-        </a>
+        {latestPublication && (
+          <a
+            className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+            rel="noopener noreferrer"
+            href="#lastPost"
+            aria-label={`Leia a última publicação: ${latestPublication.title}`}
+          >
+            <p>
+              {"Última publicação: "}
+              <span className="italic underline">{`"${latestPublication.title}"`}</span>
+            </p>
+          </a>
+        )}
       </div>
     </div>
   )
