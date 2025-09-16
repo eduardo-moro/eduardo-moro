@@ -30,7 +30,7 @@ const describeArc = (x: number, y: number, radius: number, startAngle: number, e
 export default function Pomodoro({ className = "" }: PomodoroProps) {
   const [arcAngle, setArcAngle] = useState<number>(0); // Default angle
   const [arcColor, setArcColor] = useState<string>('rgb(0,0,0)'); // Default color
-  const broker = 'ws://broker.emqx.io:8083/mqtt';
+    const broker = 'wss://broker.emqx.io:8084/mqtt';
   const topic = 'ehpmcp/esp/rgb/set';
 
   useEffect(() => {
@@ -111,7 +111,7 @@ export default function Pomodoro({ className = "" }: PomodoroProps) {
           <div className='h-full flex flex-col justify-start text-center md:text-left md:justify-center'>
             <span>
               <h3 className="text-md text-slate-400">
-                <span>ws://broker.emqx.io/mqtt/esp/rgb/set</span>
+                <span>wss://broker.emqx.io/mqtt/esp/rgb/set</span>
               </h3>
               <br/>
               <p>Vamos focar juntos?</p>
