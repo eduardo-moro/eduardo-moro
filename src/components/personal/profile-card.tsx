@@ -93,14 +93,14 @@ export default function ProfileCard({ className = "" }: ProfileCardProps) {
         </div>
 
         {latestPublication && (
-          <p className="text-xs text-muted-foreground transition-colors flex justify-center sm:justify-start">
+          <p className="text-xs text-muted-foreground transition-colors flex justify-center sm:justify-start flex-col sm:flex-row">
             {"Última publicação: "}
             <a
               rel="noopener noreferrer"
               href="#lastPost"
               aria-label={`Leia a última publicação: ${latestPublication.title}`}
             >
-                <span className="italic underline">{`"${latestPublication.title}"`}</span>
+                <span className="italic underline sm:ml-1">{`"${latestPublication.title}"`}</span>
             </a>
           </p>
         )}
