@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Fira_Mono, Varela_Round } from "next/font/google";
 import Header from "@/components/shared/header";
 import "./globals.css";
-import { FaviconProvider, useFavicon } from "@/contexts/FaviconContext";
+import { FaviconProvider } from "@/contexts/FaviconContext";
 
 const geistMono = Fira_Mono({
   variable: "--font-fira-mono",
