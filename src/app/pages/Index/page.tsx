@@ -5,11 +5,13 @@ import Intro from "@/components/personal/intro";
 import { DotBackground } from "@/components/ui/dots";
 import Blog from "@/components/personal/blog";
 import Repo from "@/components/personal/repo";
-import Publications from "@/components/personal/publications";
 import { useFavicon } from "@/contexts/FaviconContext";
 import { useEffect, useRef, useState } from "react";
 import { getGitHubPinnedRepos, GitHubRepo } from "@/lib/github-api";
 import Footer from "@/components/shared/footer";
+import Pomodoro from "@/components/personal/pomodoro";
+import Contacts from "@/components/personal/contacts";
+import { ArrowUp } from "lucide-react";
 
 export default function Index() {
   const { setIcoRef: setIcoRef } = useFavicon();
@@ -17,7 +19,7 @@ export default function Index() {
   const [pinnedRepos, setPinnedRepos] = useState<GitHubRepo[]>([]);
 
   useEffect(() => {
-    async function fetchPinnedRepos() {
+    async function fetchPinnedRepos() { 
       const repos = await getGitHubPinnedRepos("eduardo-moro");
       setPinnedRepos(repos);
     }
@@ -30,7 +32,7 @@ export default function Index() {
 
   return (
     <div className="w-full flex flex-col items-center px-6 snap-mandatory h-[100dvh] snap-y overflow-y-scroll absolute scroll-smooth">
-      <div className="h-screen w-full snap-center xs:max-w-[80%] max-w-[800px]">
+      <div id="top" className="h-screen w-full snap-center xs:max-w-[80%] max-w-[800px]">
         <DotBackground>
           <ProfileCard className="w-full max-w-[800px] sticky top-[34%] sm:top-[42%]" />
         </DotBackground>
@@ -59,10 +61,25 @@ export default function Index() {
         <Blog />
       </div>
 
-      {/*<div className="w-full snap-end xs:max-w-[80%] max-w-[800px]">
-        <Publications className=" h-screen" />
-      </div>*/}
-      <Footer />
+      <div className="w-full snap-end xs:max-w-[80%] max-w-[800px] mt-[22dvh]">
+        <Pomodoro />
+      </div>
+
+      <div className="w-full snap-end xs:max-w-[80%] max-w-[800px] mt-[22dvh]">
+        <DotBackground className="relative">
+          <Contacts className="relative bg-[radial-gradient(ellipse_at_center,var(--background)_0%,transparent_30%)] "/>
+        </DotBackground>
+      </div>
+
+      <div className="w-full snap-end xs:max-w-[80%] max-w-[800px]">
+        <Footer />
+      </div>
+
+      <a href="#top">
+        <div className="fixed right-6 bottom-6 rounded-full border-1 border-slate-400 p-2">
+          <ArrowUp />
+        </div>
+      </a>
     </div>
   );
 }
