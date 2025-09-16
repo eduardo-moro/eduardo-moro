@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Fira_Mono, Varela_Round } from "next/font/google";
 import Header from "@/components/shared/header";
 import "./globals.css";
-import { FaviconProvider, useFavicon } from "@/contexts/FaviconContext";
+import { FaviconProvider } from "@/contexts/FaviconContext";
 
 const geistMono = Fira_Mono({
   variable: "--font-fira-mono",
@@ -18,11 +18,6 @@ const varelaRound = Varela_Round({
   subsets: ["latin"],
   preload: true,
 });
-
-const Favicon = () => {
-  const { favicon } = useFavicon();
-  return <link rel="icon" href={favicon} />;
-};
 
 export default function RootLayout({
   children,
@@ -41,7 +36,7 @@ export default function RootLayout({
           />
           <link key={"/assets/normal.ico"} rel="preload" href={"/assets/normal.ico"} as="image" />
           <link rel="preload" href="/assets/reading.ico" as="image" />
-          <Favicon />
+          <link rel="icon" href="/assets/normal.ico" />
         </head>
         <body
           className={`${varelaRound.variable} ${geistMono.variable} antialiased`}

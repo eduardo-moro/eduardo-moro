@@ -1,10 +1,15 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useFavicon } from '@/contexts/FaviconContext';
 
-const Favicon = () => {
-  const { favicon } = useFavicon();
-  return <link rel="icon" href={favicon} />;
-};
+export function Favicon() {
+  const { setIcoRef } = useFavicon();
+  const icoRef = (document.getElementById('favicon') as HTMLLinkElement) || null;
 
-export default Favicon;
+  useEffect(() => {
+    setIcoRef(icoRef);
+  }, [icoRef, setIcoRef]);
+
+  return null;
+}
