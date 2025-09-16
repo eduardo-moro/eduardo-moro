@@ -125,7 +125,11 @@ html {
   scroll-behavior: smooth;
 }
 
-a {
+.prose a {
+  color: var(--color-blue-500);
+}
+
+p a {
   color: var(--color-blue-500);
 }
 

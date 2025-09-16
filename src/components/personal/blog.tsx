@@ -1,5 +1,6 @@
 
-                "use client"
+"use client"
+
 import { useEffect, useState, useRef } from "react"
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
@@ -91,15 +92,15 @@ export default function Blog({ className = "" }: BlogProps) {
                 </Button>
               </div>
               <h3 className="text-xl text-slate-400" id="lastPost">
-                <span>broker://Tabnews/</span>
-                <a href={`https://www.tabnews.com.br/${currentBlogContent.owner_username}`} target="_blank" rel="noopener noreferrer"><span className="text-[var(--foreground)]">{`${currentBlogContent.owner_username}/`}</span></a><br/>
+                <span>http://Tabnews.com/</span>
+                <a href={`https://www.tabnews.com.br/${currentBlogContent.owner_username}`} target="_blank" rel="noopener noreferrer"><span className="text-[var(--foreground)]">{`${currentBlogContent.owner_username}/`}</span></a>
                 <a href={`https://www.tabnews.com.br/${currentBlogContent.owner_username}/${currentBlogContent.slug}`} target="_blank" rel="noopener noreferrer"><span className="text-[var(--foreground)]">{currentBlogContent.title}</span></a>
               </h3>
               <div className="flex items-center text-sm text-muted-foreground mt-2">
                 <CurrencyDollarIcon className="h-4 w-4 mr-1" /> {currentBlogContent.tabcoins}
                 <ChatBubbleOvalLeftIcon className="h-4 w-4 ml-4 mr-1" /> {currentBlogContent.children_deep_count}
               </div>
-              <div ref={blogContentRef} className="max-h-[80dvh] overflow-y-scroll mt-2 prose prose-invert">
+              <div ref={blogContentRef} className="max-h-[80dvh] overflow-y-scroll mt-2 prose prose-invert text-muted-foreground">
                 <ReactMarkdown components={components} rehypePlugins={[rehypeRaw]}>{currentBlogContent.body}</ReactMarkdown>
                 <p className="text-center text-lg py-12">fim da publicação</p>
               </div>
