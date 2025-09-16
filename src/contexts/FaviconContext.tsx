@@ -5,7 +5,6 @@ import { getFavicon } from '@/lib/favicon-helper';
 
 interface FaviconContextType {
   setIcoRef: (node: HTMLElement | null) => void;
-  favicon: string;
 }
 
 const FaviconContext = createContext<FaviconContextType | undefined>(undefined);
@@ -41,8 +40,15 @@ export const FaviconProvider = ({ children }: { children: ReactNode }) => {
     };
   }, [icoRef]);
 
+  useEffect(() => {
+    const link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
+    if (link) {
+      link.href = favicon;
+    }
+  }, [favicon]);
+
   return (
-    <FaviconContext.Provider value={{ setIcoRef, favicon }}>
+    <FaviconContext.Provider value={{ setIcoRef }}>
       {children}
     </FaviconContext.Provider>
   );
@@ -53,5 +59,11 @@ export const useFavicon = () => {
   if (context === undefined) {
     throw new Error('useFavicon must be used within a FaviconProvider');
   }
-  return context;
+  return { ...context, setFavicon: (state: Parameters<typeof getFavicon>[0]) => {
+    const newFavicon = getFavicon(state);
+    const link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
+    if (link) {
+      link.href = newFavicon;
+    }
+  }};
 };

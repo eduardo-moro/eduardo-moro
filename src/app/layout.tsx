@@ -19,11 +19,6 @@ const varelaRound = Varela_Round({
   preload: true,
 });
 
-const Favicon = () => {
-  const { favicon } = useFavicon();
-  return <link rel="icon" href={favicon} />;
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -41,7 +36,7 @@ export default function RootLayout({
           />
           <link key={"/assets/normal.ico"} rel="preload" href={"/assets/normal.ico"} as="image" />
           <link rel="preload" href="/assets/reading.ico" as="image" />
-          <Favicon />
+          <link rel="icon" href="/assets/normal.ico" />
         </head>
         <body
           className={`${varelaRound.variable} ${geistMono.variable} antialiased`}
