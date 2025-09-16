@@ -5,7 +5,6 @@ import Intro from "@/components/personal/intro";
 import { DotBackground } from "@/components/ui/dots";
 import Blog from "@/components/personal/blog";
 import Repo from "@/components/personal/repo";
-import { useFavicon } from "@/contexts/FaviconContext";
 import { useEffect, useRef, useState } from "react";
 import { getGitHubPinnedRepos, GitHubRepo } from "@/lib/github-api";
 import Footer from "@/components/shared/footer";
@@ -14,7 +13,6 @@ import Contacts from "@/components/personal/contacts";
 import { ArrowUp } from "lucide-react";
 
 export default function Index() {
-  const { setIcoRef: setIcoRef } = useFavicon();
   const blogRef = useRef<HTMLDivElement>(null);
   const [pinnedRepos, setPinnedRepos] = useState<GitHubRepo[]>([]);
 
@@ -24,11 +22,7 @@ export default function Index() {
       setPinnedRepos(repos);
     }
     fetchPinnedRepos();
-
-    if (blogRef.current) {
-      setIcoRef(blogRef.current);
-    }
-  }, [setIcoRef, blogRef]);
+  }, [blogRef]);
 
   return (
     <div className="w-full flex flex-col items-center px-6 snap-mandatory h-[100dvh] snap-y overflow-y-scroll absolute scroll-smooth">

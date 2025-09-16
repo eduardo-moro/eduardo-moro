@@ -4,8 +4,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Fira_Mono, Varela_Round } from "next/font/google";
 import Header from "@/components/shared/header";
 import "./globals.css";
-import { FaviconProvider } from "@/contexts/FaviconContext";
-
 const geistMono = Fira_Mono({
   variable: "--font-fira-mono",
   weight: ["400", "500", "700"],
@@ -26,7 +24,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
-      <FaviconProvider>
         <head>
           <title>Eduardo Moro</title>
           <meta name="description" content="Analista de software backend Golang, C#" />
@@ -34,8 +31,6 @@ export default function RootLayout({
             name="viewport"
             content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
           />
-          <link key={"/assets/normal.ico"} rel="preload" href={"/assets/normal.ico"} as="image" />
-          <link rel="preload" href="/assets/reading.ico" as="image" />
           <link rel="icon" href="/assets/normal.ico" />
         </head>
         <body
@@ -46,7 +41,6 @@ export default function RootLayout({
               {children}
             </ThemeProvider>
         </body>
-      </FaviconProvider>
     </html>
   );
 }
