@@ -32,7 +32,7 @@ export default function Index() {
         </DotBackground>
       </div>
 
-      <div className="h-screen w-full snap-center xs:max-w-[80%] max-w-[800px]  max-h-screen pb-20 pt-2 scroll-mt-[18em] sm:scroll-mt-[-12em]">
+      <div className="h-screen w-full snap-center xs:max-w-[80%] max-w-[800px]  max-h-screen pb-8 pt-2 scroll-mt-[18em] sm:scroll-mt-[-12em]">
         <Intro />
       </div>
 
