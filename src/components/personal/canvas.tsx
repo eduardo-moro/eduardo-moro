@@ -20,7 +20,7 @@ const PIXEL_COLORS = [
   '#ff77a8', // 8 pink
   '#FFFFFF', // 9 TFT_WHITE
 ];
-const MIN_ZOOM = 1;
+const MIN_ZOOM = 0.5;
 const MAX_ZOOM = 40;
 const PREVIEW_SIZE = 240;
 const MQTT_TOPIC = 'ehpmcp/esp/pixel/set';
@@ -37,7 +37,6 @@ const PixelEditor = () => {
   const [zoom, setZoom] = useState(MIN_ZOOM);
   const [pan, setPan] = useState({ x: 0, y: 0 });
   const [showGridLines, setShowGridLines] = useState(true);
-  const [isPreviewHovered, setIsPreviewHovered] = useState(false);
   const { client, connectionStatus } = useMqtt();
   const [showIntro, setShowIntro] = useState(true);
 
@@ -374,7 +373,7 @@ const PixelEditor = () => {
     <div className='pb-12 pt-[-2em]'>
       <canvas
         ref={previewRef}
-        className="sticky z-10 rounded-2xl top-14 left-4 opacity-50 hover:opacity-100 hidden md:block"
+        className="sticky z-10 rounded-2xl top-14 left-4 opacity-50 border-1 border-foreground hover:opacity-100 hidden md:block"
         style={{ imageRendering: 'pixelated', width: `${PREVIEW_SIZE}px`, height: `${PREVIEW_SIZE}px` }}
       />
       <div className="top-[-5em] w-full h-[90dvh] pt-12 flex flex-col md:flex-row  text-gray-900 dark:text-gray-100 items-center">
