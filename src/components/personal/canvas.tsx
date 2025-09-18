@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { Undo, Redo, Eraser, Grid, Download, Send } from 'lucide-react';
 import { useMqtt } from '@/contexts/mqtt-context';
 import { toast } from "sonner";
@@ -24,6 +25,7 @@ const MIN_ZOOM = 0.5;
 const MAX_ZOOM = 40;
 const PREVIEW_SIZE = 240;
 const MQTT_TOPIC = 'ehpmcp/esp/pixel/set';
+const SEND_COOLDOWN_MS = 5000; // 5 seconds cooldown
 
 
 // --- Helper Functions ---
@@ -33,6 +35,7 @@ const clamp = (val: number, min: number, max: number) => Math.max(min, Math.min(
 const PixelEditor = () => {
   // --- State and Refs ---
   const [grid, setGrid] = useState<Uint8Array>(() => new Uint8Array(GRID_SIZE * GRID_SIZE).fill(0));
+  const [author, setAuthor] = useState('');
   const [currentColorIndex, setCurrentColorIndex] = useState(1);
   const [zoom, setZoom] = useState(MIN_ZOOM);
   const [pan, setPan] = useState({ x: 0, y: 0 });
@@ -50,6 +53,8 @@ const PixelEditor = () => {
   const isPainting = useRef(false);
   const lastPanPoint = useRef({ x: 0, y: 0 });
   const lastPixel = useRef<{ x: number, y: number } | null>(null);
+  const lastSentImage = useRef<string | null>(null);
+  const lastSentTime = useRef<number>(0);
 
   // --- Core Drawing Logic ---
   const drawGrid = useCallback(() => {
@@ -311,11 +316,19 @@ const PixelEditor = () => {
     setGrid(new Uint8Array(GRID_SIZE * GRID_SIZE).fill(0));
   };
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (!client || connectionStatus !== 'connected') {
       toast.error("MQTT client not connected.", {
         description: "Please wait for the connection to be established or check the console for errors.",
       });
+      return;
+    }
+
+    const dataString = Array.from(grid).join('');
+    const currentTime = Date.now();
+
+    if (lastSentImage.current === dataString && (currentTime - lastSentTime.current < SEND_COOLDOWN_MS)) {
+      toast.info("Same image sent recently. Please wait or make changes.");
       return;
     }
 
@@ -324,14 +337,13 @@ const PixelEditor = () => {
     const imageId = Math.random().toString(36).substring(2, 10);
     const totalPixels = GRID_SIZE * GRID_SIZE;
     const chunkSize = totalPixels / 4;
-    const dataString = Array.from(grid).join('');
     let partsSent = 0;
 
     for (let i = 0; i < 4; i++) {
       const chunkData = dataString.substring(i * chunkSize, (i + 1) * chunkSize);
       const payload = `${imageId},${i + 1},${chunkData}`;
       
-      client.publish(MQTT_TOPIC, payload, (err) => {
+      client.publish(MQTT_TOPIC, payload, async (err) => {
         if (err) {
           console.error(`Failed to send part ${i + 1}`, err);
           toast.error(`Failed to send part ${i + 1}`, { description: err.message });
@@ -342,6 +354,22 @@ const PixelEditor = () => {
             toast.success("Pixel data sent successfully!", {
               description: `Image ID: ${imageId}`,
             });
+            // Save to Supabase after successful MQTT send
+            const response = await fetch('/api/pixels', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ author, image: dataString }),
+            });
+
+            if (response.ok) {
+              toast.success("Arte salva no banco de dados!");
+              lastSentImage.current = dataString;
+              lastSentTime.current = currentTime;
+            } else {
+              toast.error("Ih, deu ruim pra salvar a arte no banco de dados");
+            }
           }
         }
       });
@@ -390,6 +418,14 @@ const PixelEditor = () => {
               <Button title="Save as PNG"  size="icon" variant="outline" onClick={handleSavePng}><Download className="w-5 h-5" /></Button>
               <Button title="Send to MQTT" size="icon" variant="outline" onClick={handleSend}><Send className="w-5 h-5" /></Button>
           </div>
+          <div className="w-px md:w-full h-full md:h-px bg-gray-400 dark:bg-gray-600 my-2"></div>
+            <Input
+                type="text"
+                placeholder="Seu nome (opcional)"
+                value={author}
+                onChange={(e) => setAuthor(e.target.value)}
+                className="w-24"
+            />
         </div>
 
         {/* --- Main Canvas --- */}

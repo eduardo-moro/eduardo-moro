@@ -6,7 +6,7 @@ import ToggleLang from "@/components/shared/lang-toggle"
 export default function Header() {
 
   return (
-    <div className="flex justify-between p-2 fixed w-full z-10">
+    <div className="flex justify-between p-2 fixed w-full z-10 top-0">
       <ToggleTheme/>
       <ToggleLang/>
     </div>
