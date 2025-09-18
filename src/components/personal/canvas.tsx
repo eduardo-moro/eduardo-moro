@@ -396,7 +396,7 @@ const PixelEditor = () => {
         <div className='flex justify-around overflow-hidden rounded w-full'>
           <div
             ref={containerRef}
-            className="relative flex-1 cursor-crosshair overflow-hidden touch-none drop-shadow-white drop-shadow aspect-square"
+            className="relative flex-1 cursor-crosshair overflow-hidden touch-none drop-shadow-white drop-shadow aspect-square max-w-[1000px]"
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
@@ -409,9 +409,9 @@ const PixelEditor = () => {
             >
             {showIntro && (
                 <div className="absolute inset-0 bg-[#0006] backdrop-blur-sm z-20 flex items-center justify-center p-4">
-                    <div className="bg-white/80 scale-[0.6] md:scale-1 dark:bg-gray-800/80 p-6 rounded-lg shadow-lg max-w-sm text-center font-sans">
+                    <div className="bg-white/80 dark:bg-gray-800/80 p-6 rounded-lg shadow-lg max-w-sm text-center font-sans">
                         <h2 className="text-2xl font-bold mb-4">Bem vindo ao meu paint!</h2>
-                        <p className="mb-4 ">Este quadro de pixel art está conectado ao meu <a href='https://github.com/eduardo-moro/fake-geek-magic-os'>relógio de mesa</a>, você pode baixar sua arte, ou me envia-la, ela vai aparecer por aqui por meio minuto, pode confiar!<br/><br/><span className='text-sm'>Pro tip: você pode me enviar uma animação de até 10 frames também, é só desenhar e enviar os frames em sequência e poderei visualiza-los!</span></p>
+                        <p className="mb-4 ">Este quadro de pixel art está conectado ao meu <a href='https://github.com/eduardo-moro/fake-geek-magic-os'>relógio de mesa</a>, você pode baixar sua arte, ou me envia-la, ela vai aparecer por aqui por meio minuto, pode confiar!<br/><br/><span className='text-sm hidden md:block'>Pro tip: você pode me enviar uma animação de até 10 frames também, é só desenhar e enviar os frames em sequência e poderei visualiza-los!</span></p>
                         <Button onClick={() => setShowIntro(false)}>Que massa! bora lá</Button>
                     </div>
                 </div>
