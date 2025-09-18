@@ -4,6 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Fira_Mono, Varela_Round } from "next/font/google";
 import Header from "@/components/shared/header";
 import { Toaster } from "@/components/ui/sonner";
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css";
 const geistMono = Fira_Mono({
   variable: "--font-fira-mono",
@@ -40,6 +41,7 @@ export default function RootLayout({
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
               <Header />
               {children}
+              <Analytics/>
               <Toaster />
             </ThemeProvider>
         </body>
