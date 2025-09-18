@@ -13,11 +13,11 @@ const PIXEL_COLORS = [
   '#e43b44', // 1 red
   '#ffa300', // 2 orange
   '#fbf236', // 3 yellow
-  '#3cbc49', // 4 green
-  '#00a8cc', // 5 cyan
+  '#32cd32', // 4 green
+  '#00ffff', // 5 cyan
   '#2472c8', // 6 blue
   '#7b41d9', // 7 purple
-  '#ff77a8', // 8 pink
+  '#f81894', // 8 pink
   '#FFFFFF', // 9 TFT_WHITE
 ];
 const MIN_ZOOM = 0.5;
