@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import mqtt from 'mqtt';
+import { useMqtt } from '@/contexts/mqtt-context';
 
 interface PomodoroProps {
   className?: string;
@@ -30,58 +30,53 @@ const describeArc = (x: number, y: number, radius: number, startAngle: number, e
 export default function Pomodoro({ className = "" }: PomodoroProps) {
   const [arcAngle, setArcAngle] = useState<number>(0); // Default angle
   const [arcColor, setArcColor] = useState<string>('rgb(0,0,0)'); // Default color
-    const broker = 'wss://broker.emqx.io:8084/mqtt';
+  const { client, connectionStatus } = useMqtt();
   const topic = 'ehpmcp/esp/rgb/set';
 
   useEffect(() => {
-    const client = mqtt.connect(broker);
-
-    client.on('connect', () => {
-      console.log('Connected to MQTT broker');
+    if (client && connectionStatus === 'connected') {
       client.subscribe(topic, (err) => {
         if (!err) {
-          console.log('Subscribed to ehpmcp/esp/rgb/set');
+          console.log(`Pomodoro subscribed to ${topic}`);
         } else {
-          console.error('Subscription error:', err);
+          console.error(`Pomodoro subscription error to ${topic}:`, err);
         }
       });
-    });
 
-    client.on('message', (topic, message) => {
-      console.log(`Received message from topic ${topic}: ${message.toString()}`);
+      const messageHandler = (msgTopic: string, message: Buffer) => {
+        if (msgTopic === topic) {
+          console.log(`Pomodoro received message from topic ${msgTopic}: ${message.toString()}`);
+          const parts = message.toString().split(',');
+          if (parts.length === 4) {
+            const angle = parseFloat(parts[0]);
+            const r = parseInt(parts[1], 10);
+            const g = parseInt(parts[2], 10);
+            const b = parseInt(parts[3], 10);
 
-      const parts = message.toString().split(',');
-      if (parts.length === 4) {
-        const angle = parseFloat(parts[0]);
-        const r = parseInt(parts[1], 10);
-        const g = parseInt(parts[2], 10);
-        const b = parseInt(parts[3], 10);
-
-        if (!isNaN(angle) && !isNaN(r) && !isNaN(g) && !isNaN(b)) {
-          setArcAngle(angle);
-          setArcColor(`rgb(${r},${g},${b})`);
-        } else {
-          console.warn('Invalid MQTT message format for arc:', message.toString());
+            if (!isNaN(angle) && !isNaN(r) && !isNaN(g) && !isNaN(b)) {
+              setArcAngle(angle);
+              setArcColor(`rgb(${r},${g},${b})`);
+            } else {
+              console.warn('Invalid MQTT message format for arc:', message.toString());
+            }
+          } else {
+            console.warn('Unexpected MQTT message format:', message.toString());
+          }
         }
-      } else {
-        console.warn('Unexpected MQTT message format:', message.toString());
-      }
-    });
+      };
 
-    client.on('error', (err) => {
-      console.error('MQTT error:', err);
-    });
+      client.on('message', messageHandler);
 
-    client.on('close', () => {
-      console.log('Disconnected from MQTT broker');
-    });
-
-    return () => {
-      if (client.connected) {
-        client.end();
-      }
-    };
-  }, []);
+      return () => {
+        client.removeListener('message', messageHandler);
+        client.unsubscribe(topic, (err) => {
+          if (!err) {
+            console.log(`Pomodoro unsubscribed from ${topic}`);
+          }
+        });
+      };
+    }
+  }, [client, connectionStatus]);
 
   const centerX = 100;
   const centerY = 100;
