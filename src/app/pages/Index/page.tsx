@@ -63,7 +63,7 @@ export default function Index() {
           <Pomodoro />
         </div>
 
-        <div className="w-full snap-center ">
+        <div className="w-full snap-end mt-[18dvh] scroll-mt-[-18em] ">
           <Canvas />
         </div>
 

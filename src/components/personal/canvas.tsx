@@ -39,6 +39,7 @@ const PixelEditor = () => {
   const [showGridLines, setShowGridLines] = useState(true);
   const [isPreviewHovered, setIsPreviewHovered] = useState(false);
   const { client, connectionStatus } = useMqtt();
+  const [showIntro, setShowIntro] = useState(true);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const previewRef = useRef<HTMLCanvasElement>(null);
@@ -143,6 +144,7 @@ const PixelEditor = () => {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      if (showIntro) return;
       if (e.ctrlKey && e.key.toLowerCase() === 'z') {
         e.preventDefault();
         handleUndo();
@@ -158,7 +160,7 @@ const PixelEditor = () => {
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+  }, [showIntro]);
 
   // --- State Modifiers ---
   const updateGridPixel = (x: number, y: number, colorIndex: number) => {
@@ -372,51 +374,62 @@ const PixelEditor = () => {
     <div className='pb-12 pt-[-2em]'>
       <canvas
         ref={previewRef}
-        className="sticky z-10 rounded top-14 left-4 opacity-50 hover:opacity-100 hidden md:block"
+        className="sticky z-10 rounded-2xl top-14 left-4 opacity-50 hover:opacity-100 hidden md:block"
         style={{ imageRendering: 'pixelated', width: `${PREVIEW_SIZE}px`, height: `${PREVIEW_SIZE}px` }}
       />
-      <div className="relative top-[-5em] w-full h-[90dvh] flex flex-col md:flex-row  text-gray-900 dark:text-gray-100">
+      <div className="top-[-5em] w-full h-[90dvh] pt-12 flex flex-col md:flex-row  text-gray-900 dark:text-gray-100 items-center">
         {/* --- Toolbar --- */}
-        <div className="flex flex-row md:flex-col items-center p-2 space-x-2 md:space-x-0 md:space-y-2 justify-center">
+        <div className="flex flex-row md:flex-col items-center p-2 space-x-2 md:space-x-0 md:space-y-2">
           <div className="flex md:flex-col space-x-2 md:space-x-0 md:space-y-2">
               <Button title="Undo (Ctrl+Z)" size="icon" variant="outline" onClick={handleUndo}><Undo className="w-5 h-5" /></Button>
               <Button title="Redo (Ctrl+Y)" size="icon" variant="outline" onClick={handleRedo}><Redo className="w-5 h-5" /></Button>
           </div>
           <div className="w-px md:w-full h-full md:h-px bg-gray-400 dark:bg-gray-600 my-2"></div>
           <div className="flex md:flex-col space-x-2 md:space-x-0 md:space-y-2">
-              <Button title="Toggle Grid" size="icon" variant={showGridLines ? "secondary" : "outline"} onClick={() => setShowGridLines(s => !s)}><Grid className="w-5 h-5" /></Button>
+              <Button title="Toggle Grid"  size="icon" variant={showGridLines ? "secondary" : "outline"} onClick={() => setShowGridLines(s => !s)}><Grid className="w-5 h-5" /></Button>
               <Button title="Clear Canvas" size="icon" variant="outline" onClick={handleClear}><Eraser className="w-5 h-5" /></Button>
-              <Button title="Save as PNG" size="icon" variant="outline" onClick={handleSavePng}><Download className="w-5 h-5" /></Button>
+              <Button title="Save as PNG"  size="icon" variant="outline" onClick={handleSavePng}><Download className="w-5 h-5" /></Button>
               <Button title="Send to MQTT" size="icon" variant="outline" onClick={handleSend}><Send className="w-5 h-5" /></Button>
           </div>
         </div>
 
         {/* --- Main Canvas --- */}
-        <div
-          ref={containerRef}
-          className="relative flex-1 cursor-crosshair overflow-hidden touch-none drop-shadow-white drop-shadow aspect-square"
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
-          onMouseLeave={handleMouseUp}
-          onWheel={handleWheel}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
-          onContextMenu={(e) => e.preventDefault()}
-        >
-          <canvas ref={canvasRef}/>
+        <div className='flex justify-around overflow-hidden rounded w-full'>
+          <div
+            ref={containerRef}
+            className="relative flex-1 cursor-crosshair overflow-hidden touch-none drop-shadow-white drop-shadow aspect-square"
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+            onWheel={handleWheel}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            onContextMenu={(e) => e.preventDefault()}
+            >
+            {showIntro && (
+                <div className="absolute inset-0 bg-[#0006] backdrop-blur-sm z-20 flex items-center justify-center p-4">
+                    <div className="bg-white/80 dark:bg-gray-800/80 p-6 rounded-lg shadow-lg max-w-sm text-center font-sans">
+                        <h2 className="text-2xl font-bold mb-4">Bem vindo ao meu paint!</h2>
+                        <p className="mb-4">Este quadro de pixel art está conectado ao meu <a href='https://github.com/eduardo-moro/fake-geek-magic-os'>relógio de mesa</a>, você pode baixar sua arte, ou me envia-la, ela vai aparecer por aqui por meio minuto, pode confiar!<br/><br/><span className='text-sm'>Pro tip: você pode me enviar uma animação de até 10 frames também, é só desenhar e enviar os frames em sequência e poderei visualiza-los!</span></p>
+                        <Button onClick={() => setShowIntro(false)}>Que massa! bora lá</Button>
+                    </div>
+                </div>
+            )}
+            <canvas ref={canvasRef}/>
+          </div>
         </div>
 
 
         {/* --- Palette --- */}
-        <div className="flex flex-row md:flex-col items-center p-4 space-x-4 md:space-x-0 md:space-y-4 justify-center">
+        <div className="flex flex-row justify-around items-center w-70 flex-wrap center p-6 h-34 md:w-20 md:h-full md:flex-col">
           {PIXEL_COLORS.map((color, index) => (
             <button
               key={color}
               title={`${color.toUpperCase()} (${index})`}
               onClick={() => setCurrentColorIndex(index)}
-              className={`w-10 h-10 rounded-full border-2 transition-transform duration-150 ${currentColorIndex === index ? 'scale-150 shadow-white shadow-[0_0_5]' : 'border-transparent'}`}
+              className={`relative w-10 h-10 aspect-square rounded-full transition-transform duration-150 border-foreground border-2 ${currentColorIndex === index ? 'scale-120' : ''}`}
               style={{ backgroundColor: color }}
             />
           ))}
