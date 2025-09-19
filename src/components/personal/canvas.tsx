@@ -291,7 +291,7 @@ const PixelEditor = () => {
   };
 
   // --- Button Actions ---
-  const handleUndo = () => {
+  const handleUndo = useCallback(() => {
     if (undoStack.current.length > 0) {
       const lastState = undoStack.current.pop();
       if (lastState) {
@@ -299,9 +299,9 @@ const PixelEditor = () => {
         setGrid(lastState);
       }
     }
-  };
+  }, [grid]);
 
-  const handleRedo = () => {
+  const handleRedo = useCallback(() => {
     if (redoStack.current.length > 0) {
       const nextState = redoStack.current.pop();
       if (nextState) {
@@ -309,7 +309,7 @@ const PixelEditor = () => {
         setGrid(nextState);
       }
     }
-  };
+  }, [grid]);
 
   const handleClear = () => {
     recordUndo();

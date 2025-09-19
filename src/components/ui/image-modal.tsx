@@ -28,7 +28,13 @@ export default function ImageModal({ src, alt, onClose }: ImageModalProps) {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#000000ef] bg-blur">
       <div ref={modalRef} className="relative max-w-3xl max-h-full p-4 rounde">
-        <img src={src} alt={alt} className="max-w-full max-h-full object-contain rounded-2xl" />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          style={{ objectFit: "contain" }}
+          className="rounded-2xl"
+        />
         <button
           className="absolute top-[-2rem] right-[-2rem] text-white text-4xl font-sans"
           onClick={onClose}

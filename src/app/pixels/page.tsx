@@ -1,22 +1,55 @@
-import { supabase } from '@/lib/supabase-client';
-import PixelDisplay from '@/components/personal/pixel-display';
+'use client';
 
-export default async function Pixels() {
-  const { data: pixels } = await supabase.from("pixels").select();
+import { useEffect, useState } from 'react';
+import PixelDisplay from '@/components/personal/pixel-display';
+import { supabase } from '@/lib/supabase-client';
+
+interface Pixel {
+  id: string;
+  image: string;
+  author: string;
+  created_at: string;
+}
+
+export default function Pixels() {
+  const [pixels, setPixels] = useState<Pixel[]>([]);
+
+  useEffect(() => {
+    const fetchPixels = async () => {
+      const { data, error } = await supabase.from('pixels').select('*');
+      if (data) {
+        setPixels(data);
+      }
+      if (error) {
+        console.error('Error fetching pixels:', error);
+      }
+    };
+
+    fetchPixels();
+
+    const channel = supabase
+      .channel('realtime pixels')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'pixels' },
+        (payload) => {
+          console.log('Change received!', payload);
+          fetchPixels();
+        }
+      )
+      .subscribe();
+
+    return () => {
+      supabase.removeChannel(channel);
+    };
+  }, []);
 
   return (
-    <div className='m-12 max-w-[800px] w-full font-sans'>
-      <h1 className="text-3xl font-bold mb-6">Pixel Art Gallery</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {pixels?.map((pixel: any) => (
-          <PixelDisplay
-            key={pixel.id}
-            image={pixel.image}
-            author={pixel.author}
-            created_at={pixel.created_at}
-          />
-        ))}
-      </div>
+    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+      <h1 className="text-4xl font-bold mb-8">Pixels</h1>
+      {pixels.map(pixel => {
+        return <PixelDisplay key={pixel.id} image={pixel.image} author={pixel.author} created_at={pixel.created_at} />
+      })}
     </div>
   );
 }
