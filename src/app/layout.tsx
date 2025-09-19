@@ -7,6 +7,7 @@ import { Toaster } from "@/components/ui/sonner";
 import { Analytics } from "@vercel/analytics/next";
 import { MqttProvider } from "@/contexts/mqtt-context";
 import "./globals.css";
+import Noise from "@/components/Noise"
 const geistMono = Fira_Mono({
   variable: "--font-fira-mono",
   weight: ["400", "500", "700"],
@@ -43,6 +44,10 @@ export default function RootLayout({
               <MqttProvider brokerUrl={process.env.NEXT_PUBLIC_MQTT_BROKER_URL || ""}>
                 <Header />
                 {children}
+                <Noise
+                  patternSize={1000}
+                  patternAlpha={12}
+                ></Noise>
                 <Analytics/>
                 <Toaster />
               </MqttProvider>
