@@ -17,7 +17,7 @@ import { MqttProvider } from "@/contexts/mqtt-context";
 export default function Index() {
   const blogRef = useRef<HTMLDivElement>(null);
   const [pinnedRepos, setPinnedRepos] = useState<GitHubRepo[]>([]);
-  const brokerUrl = "wss://broker.emqx.io:8084/mqtt";
+  const brokerUrl = process.env.NEXT_PUBLIC_MQTT_BROKER_URL || "";
 
   useEffect(() => {
     async function fetchPinnedRepos() { 

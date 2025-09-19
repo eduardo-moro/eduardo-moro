@@ -4,6 +4,8 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Fira_Mono, Varela_Round } from "next/font/google";
 import Header from "@/components/shared/header";
 import { Toaster } from "@/components/ui/sonner";
+import { Analytics } from "@vercel/analytics/next";
+import { MqttProvider } from "@/contexts/mqtt-context";
 import "./globals.css";
 const geistMono = Fira_Mono({
   variable: "--font-fira-mono",
@@ -38,9 +40,12 @@ export default function RootLayout({
           className={`${varelaRound.variable} ${geistMono.variable} antialiased`}
         >
             <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-              <Header />
-              {children}
-              <Toaster />
+              <MqttProvider brokerUrl={process.env.NEXT_PUBLIC_MQTT_BROKER_URL || ""}>
+                <Header />
+                {children}
+                <Analytics/>
+                <Toaster />
+              </MqttProvider>
             </ThemeProvider>
         </body>
     </html>
