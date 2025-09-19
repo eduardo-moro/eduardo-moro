@@ -39,7 +39,7 @@ const PixelEditor = () => {
   const [currentColorIndex, setCurrentColorIndex] = useState(1);
   const [zoom, setZoom] = useState(MIN_ZOOM);
   const [pan, setPan] = useState({ x: 0, y: 0 });
-  const [showGridLines, setShowGridLines] = useState(true);
+  const [showGridLines, setShowGridLines] = useState(false);
   const { client, connectionStatus } = useMqtt();
   const [showIntro, setShowIntro] = useState(true);
 
@@ -68,7 +68,7 @@ const PixelEditor = () => {
     canvas.height = height;
 
     const pixelSize = (width / GRID_SIZE) * zoom;
-    const gap = showGridLines ? 1 : 0;
+    const gap = showGridLines ? 1 : -1;
 
     ctx.clearRect(0, 0, width, height);
     ctx.imageSmoothingEnabled = false;
@@ -332,7 +332,7 @@ const PixelEditor = () => {
       return;
     }
 
-    toast.info("Sending pixel data via MQTT...");
+    toast.info("Enviando imagem!");
 
     const imageId = Math.random().toString(36).substring(2, 10);
     const totalPixels = GRID_SIZE * GRID_SIZE;
@@ -418,27 +418,29 @@ const PixelEditor = () => {
               <Button title="Save as PNG"  size="icon" variant="outline" onClick={handleSavePng}><Download className="w-5 h-5" /></Button>
               <Button title="Send to MQTT" size="icon" variant="outline" onClick={handleSend}><Send className="w-5 h-5" /></Button>
           </div>
-          <div className="w-px md:w-full h-full md:h-px bg-gray-400 dark:bg-gray-600 my-2"></div>
-            <Input
-                type="text"
-                placeholder="Seu nome (opcional)"
-                value={author}
-                onChange={(e) => setAuthor(e.target.value)}
-                className="w-24"
-            />
+        </div>
+        <div>
+          <Input
+            type="text"
+            placeholder="Seu nome (opcional)"
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+            className="w-66 mb-4 md:hidden"
+          />
         </div>
 
         {/* --- Main Canvas --- */}
-        <div className='flex justify-around overflow-hidden rounded w-full'>
+        <div className='flex justify-around items-center overflow-hidden rounded w-full flex-col'>
           <div
             ref={containerRef}
-            className="relative flex-1 cursor-crosshair overflow-hidden touch-none drop-shadow-white drop-shadow aspect-square max-w-[1000px]"
+            className="w-full relative flex-1 cursor-crosshair overflow-hidden touch-none aspect-square max-w-[1000px]"
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
             onMouseLeave={handleMouseUp}
             onWheel={handleWheel}
             onTouchStart={handleTouchStart}
+            style={{filter: "drop-shadow(0 0 0.5px white)"}}
             onTouchMove={handleTouchMove}
             onTouchEnd={handleTouchEnd}
             onContextMenu={(e) => e.preventDefault()}
@@ -454,6 +456,13 @@ const PixelEditor = () => {
             )}
             <canvas ref={canvasRef}/>
           </div>
+            <Input
+                type="text"
+                placeholder="Seu nome (opcional)"
+                value={author}
+                onChange={(e) => setAuthor(e.target.value)}
+                className="w-64 mt-4 hidden md:block"
+            />
         </div>
 
 

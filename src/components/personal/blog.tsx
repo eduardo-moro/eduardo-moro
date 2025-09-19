@@ -91,7 +91,7 @@ export default function Blog({ className = "" }: BlogProps) {
                   Próxima
                 </Button>
               </div>
-              <h3 className="text-xl text-slate-400" id="lastPost">
+              <h3 className="text-xl text-slate-400 max-w-screen" id="lastPost">
                 <span>http://Tabnews.com/</span>
                 <a href={`https://www.tabnews.com.br/${currentBlogContent.owner_username}`} target="_blank" rel="noopener noreferrer"><span className="text-[var(--foreground)]">{`${currentBlogContent.owner_username}/`}</span></a>
                 <a href={`https://www.tabnews.com.br/${currentBlogContent.owner_username}/${currentBlogContent.slug}`} target="_blank" rel="noopener noreferrer"><span className="text-[var(--foreground)]">{currentBlogContent.title}</span></a>

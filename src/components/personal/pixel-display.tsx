@@ -77,7 +77,7 @@ const PixelDisplay: React.FC<PixelDisplayProps> = ({ image, author, created_at }
       return;
     }
 
-    toast.info("Sending pixel data via MQTT...");
+    toast.info("Enviando imagem!");
 
     const imageId = Math.random().toString(36).substring(2, 10);
     const totalPixels = GRID_SIZE * GRID_SIZE;
