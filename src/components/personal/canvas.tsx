@@ -433,7 +433,7 @@ const PixelEditor = () => {
         <div className='flex justify-around items-center overflow-hidden rounded w-full flex-col'>
           <div
             ref={containerRef}
-            className="w-full relative flex-1 cursor-crosshair overflow-hidden touch-none aspect-square max-w-[1000px]"
+            className="w-full relative flex-1 cursor-crosshair overflow-hidden touch-none aspect-square max-w-[800px]"
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUp}
