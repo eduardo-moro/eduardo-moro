@@ -27,6 +27,7 @@ const Noise = ({
 
       canvas.style.width = '100vw';
       canvas.style.height = '100vh';
+      drawGrain();
     };
 
     const drawGrain = () => {
