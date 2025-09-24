@@ -29,8 +29,15 @@ export default function RootLayout({
   return (
     <html lang="pt-br" suppressHydrationWarning>
         <head>
-          <title>Eduardo Moro</title>
-          <meta name="description" content="Analista de software backend Golang, C#" />
+          <title>eduardo moro</title>
+          <meta name="description" content="Desenvolvedor backend, ciclista e hobbista de IoT" />
+          <meta property="og:title" content="eduardo moro" />
+          <meta property="og:description" content="Desenvolvedor backend, ciclista e hobbista de IoT" />
+          <meta property="og:type" content="website" />
+          <meta property="og:url" content="https://eduardomoro.vercel.app" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:title" content="eduardo moro" />
+          <meta name="twitter:description" content="Desenvolvedor backend, ciclista e hobbista de IoT" />
           <meta
             name="viewport"
             content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
