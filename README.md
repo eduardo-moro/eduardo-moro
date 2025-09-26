@@ -13,4 +13,4 @@
 - 🫂 Check my projects, try running them, create some requests, it will be great to hear some tips on how to improve how I show my skills in this space of the internet!
 - ✉️ Feel free to reach me out directly via [Linkedin](mailto:dev.eduardomoro@gmail.com) or [email](mailto:dev.eduardomoro@gmail.com)
 
-![](https://komarev.com/ghpvc/?username=eduardo-moro&style=for-the-badge&color=blue)
+![Visitors](https://api.visitorbadge.io/api/combined?path=https%3A%2F%2Feduardomoro.vercel.app%2F&label=Profile%20visits&labelColor=%230d1117&countColor=%230d1117&labelStyle=none)
