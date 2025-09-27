@@ -12,7 +12,7 @@ interface PixelDisplayProps {
   created_at: string;
 }
 
-const GRID_SIZE = 24;
+const GRID_SIZE = 32;
 const PIXEL_COLORS = [
   '#000000', // 0 TFT_BLACK
   '#e43b44', // 1 red
@@ -25,7 +25,7 @@ const PIXEL_COLORS = [
   '#f81894', // 8 pink
   '#FFFFFF', // 9 TFT_WHITE
 ];
-const DISPLAY_SIZE = 240; // 24 * 10
+const DISPLAY_SIZE = 320; // 32 * 10
 const PIXEL_SCALE = DISPLAY_SIZE / GRID_SIZE;
 const MQTT_TOPIC = 'ehpmcp/esp/pixel/set';
 
@@ -81,11 +81,12 @@ const PixelDisplay: React.FC<PixelDisplayProps> = ({ image, author, created_at }
 
     const imageId = Math.random().toString(36).substring(2, 10);
     const totalPixels = GRID_SIZE * GRID_SIZE;
-    const chunkSize = totalPixels / 4;
+    const chunkSize = 128;
+    const numChunks = totalPixels / chunkSize;
     const dataString = image;
     let partsSent = 0;
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < numChunks; i++) {
       const chunkData = dataString.substring(i * chunkSize, (i + 1) * chunkSize);
       const payload = `${imageId},${i + 1},${chunkData}`;
       
@@ -96,7 +97,7 @@ const PixelDisplay: React.FC<PixelDisplayProps> = ({ image, author, created_at }
         } else {
           console.log(`Successfully sent part ${i + 1}`);
           partsSent++;
-          if (partsSent === 4) {
+          if (partsSent === numChunks) {
             toast.success("Pixel data sent successfully!", {
               description: `Image ID: ${imageId}`,
             });

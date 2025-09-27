@@ -8,7 +8,7 @@ import { useMqtt } from '@/contexts/mqtt-context';
 import { toast } from "sonner";
 
 // --- Constants ---
-const GRID_SIZE = 24;
+const GRID_SIZE = 32;
 const PIXEL_COLORS = [
   '#000000', // 0 TFT_BLACK
   '#e43b44', // 1 red
@@ -23,7 +23,7 @@ const PIXEL_COLORS = [
 ];
 const MIN_ZOOM = 0.5;
 const MAX_ZOOM = 40;
-const PREVIEW_SIZE = 240;
+const PREVIEW_SIZE = 320;
 const MQTT_TOPIC = 'ehpmcp/esp/pixel/set';
 const SEND_COOLDOWN_MS = 5000; // 5 seconds cooldown
 
@@ -311,6 +311,26 @@ const PixelEditor = () => {
     }
   }, [grid]);
 
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (showIntro) return;
+      if (e.ctrlKey && e.key.toLowerCase() === 'z') {
+        e.preventDefault();
+        handleUndo();
+      } else if (e.ctrlKey && e.key.toLowerCase() === 'y') {
+        e.preventDefault();
+        handleRedo();
+      } else if (!isNaN(parseInt(e.key))) {
+        const num = parseInt(e.key);
+        if (num >= 0 && num < PIXEL_COLORS.length) {
+          setCurrentColorIndex(num);
+        }
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [showIntro, handleUndo, handleRedo]);
+
   const handleClear = () => {
     recordUndo();
     setGrid(new Uint8Array(GRID_SIZE * GRID_SIZE).fill(0));
@@ -336,10 +356,11 @@ const PixelEditor = () => {
 
     const imageId = Math.random().toString(36).substring(2, 10);
     const totalPixels = GRID_SIZE * GRID_SIZE;
-    const chunkSize = totalPixels / 4;
+    const chunkSize = 128;
+    const numChunks = totalPixels / chunkSize;
     let partsSent = 0;
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < numChunks; i++) {
       const chunkData = dataString.substring(i * chunkSize, (i + 1) * chunkSize);
       const payload = `${imageId},${i + 1},${chunkData}`;
       
@@ -350,7 +371,7 @@ const PixelEditor = () => {
         } else {
           console.log(`Successfully sent part ${i + 1}`);
           partsSent++;
-          if (partsSent === 4) {
+          if (partsSent === numChunks) {
             toast.success("Pixel data sent successfully!", {
               description: `Image ID: ${imageId}`,
             });
