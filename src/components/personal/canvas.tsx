@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Undo, Redo, Eraser, Grid, Download, Send } from 'lucide-react';
+import { Undo, Redo, Eraser, Grid, Download, Send, Upload } from 'lucide-react';
 import { useMqtt } from '@/contexts/mqtt-context';
 import { toast } from "sonner";
 
@@ -31,6 +31,32 @@ const SEND_COOLDOWN_MS = 5000; // 5 seconds cooldown
 // --- Helper Functions ---
 const clamp = (val: number, min: number, max: number) => Math.max(min, Math.min(val, max));
 
+const colorDistance = (color1: number[], color2: string) => {
+  const r1 = color1[0];
+  const g1 = color1[1];
+  const b1 = color1[2];
+
+  const r2 = parseInt(color2.substring(1, 3), 16);
+  const g2 = parseInt(color2.substring(3, 5), 16);
+  const b2 = parseInt(color2.substring(5, 7), 16);
+
+  return Math.sqrt(Math.pow(r1 - r2, 2) + Math.pow(g1 - g2, 2) + Math.pow(b1 - b2, 2));
+};
+
+const findNearestColorIndex = (color: number[]) => {
+  let minDistance = Infinity;
+  let nearestColorIndex = 0;
+
+  for (let i = 0; i < PIXEL_COLORS.length; i++) {
+    const distance = colorDistance(color, PIXEL_COLORS[i]);
+    if (distance < minDistance) {
+      minDistance = distance;
+      nearestColorIndex = i;
+    }
+  }
+  return nearestColorIndex;
+};
+
 // --- Main Component ---
 const PixelEditor = () => {
   // --- State and Refs ---
@@ -46,6 +72,7 @@ const PixelEditor = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const previewRef = useRef<HTMLCanvasElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const undoStack = useRef<Uint8Array[]>([]);
   const redoStack = useRef<Uint8Array[]>([]);
@@ -290,6 +317,57 @@ const PixelEditor = () => {
       lastPixel.current = null;
   };
 
+  const handleImportClick = () => {
+    fileInputRef.current?.click();
+  };
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const file = e.target.files?.[0];
+      if (!file) return;
+  
+      const reader = new FileReader();
+      reader.onload = (event) => {
+          const img = new Image();
+          img.onload = () => {
+              const tempCanvas = document.createElement('canvas');
+              const tempCtx = tempCanvas.getContext('2d');
+              if (!tempCtx) return;
+  
+              tempCanvas.width = img.width;
+              tempCanvas.height = img.height;
+              tempCtx.drawImage(img, 0, 0);
+  
+              const newGrid = new Uint8Array(GRID_SIZE * GRID_SIZE);
+              const blockWidth = img.width / GRID_SIZE;
+              const blockHeight = img.height / GRID_SIZE;
+  
+              for (let y = 0; y < GRID_SIZE; y++) {
+                  for (let x = 0; x < GRID_SIZE; x++) {
+                      const centerX = Math.floor((x + 0.5) * blockWidth);
+                      const centerY = Math.floor((y + 0.5) * blockHeight);
+                      
+                      const pixelData = tempCtx.getImageData(centerX, centerY, 1, 1).data;
+                      const color = [pixelData[0], pixelData[1], pixelData[2]];
+                      
+                      const nearestColorIndex = findNearestColorIndex(color);
+                      newGrid[y * GRID_SIZE + x] = nearestColorIndex;
+                  }
+              }
+              recordUndo();
+              setGrid(newGrid);
+              toast.success("Image imported successfully!");
+          };
+          img.onerror = () => {
+              toast.error("Failed to load image.");
+          };
+          img.src = event.target?.result as string;
+      };
+      reader.onerror = () => {
+          toast.error("Failed to read file.");
+      };
+      reader.readAsDataURL(file);
+  };
+
   // --- Button Actions ---
   const handleUndo = useCallback(() => {
     if (undoStack.current.length > 0) {
@@ -436,10 +514,18 @@ const PixelEditor = () => {
           <div className="flex md:flex-col space-x-2 md:space-x-0 md:space-y-2">
               <Button title="Toggle Grid"  size="icon" variant={showGridLines ? "secondary" : "outline"} onClick={() => setShowGridLines(s => !s)}><Grid className="w-5 h-5" /></Button>
               <Button title="Clear Canvas" size="icon" variant="outline" onClick={handleClear}><Eraser className="w-5 h-5" /></Button>
+              <Button title="Import Image" size="icon" variant="outline" onClick={handleImportClick}><Upload className="w-5 h-5" /></Button>
               <Button title="Save as PNG"  size="icon" variant="outline" onClick={handleSavePng}><Download className="w-5 h-5" /></Button>
               <Button title="Send to MQTT" size="icon" variant="outline" onClick={handleSend}><Send className="w-5 h-5" /></Button>
           </div>
         </div>
+        <input
+            type="file"
+            ref={fileInputRef}
+            onChange={handleImageUpload}
+            accept="image/png, image/jpeg"
+            className="hidden"
+        />
         <div>
           <Input
             type="text"
