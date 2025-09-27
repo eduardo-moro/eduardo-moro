@@ -55,7 +55,7 @@ const Noise = ({
     };
   }, [patternSize, patternScaleX, patternScaleY, patternAlpha]);
 
-  return <canvas className="noise-overlay" ref={grainRef} style={{ imageRendering: 'pixelated' }} />;
+  return <canvas className="noise-overlay" ref={grainRef} style={{ imageRendering: 'pixelated', position: 'fixed' }} />;
 };
 
 export default Noise;
